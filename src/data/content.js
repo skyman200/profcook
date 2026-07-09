@@ -8,8 +8,8 @@ export const profile = {
   role: 'Professor of Physical Therapists',
   era: 'PHYSICAL THERAPY × SYSTEMS',
   lab: '본관 410호',
-  cover: 'images/kim.jpg',
-  portrait: 'images/hero-portrait.jpg',
+  cover: 'images/hero-portrait.jpg',
+  portrait: 'images/clinic-1.jpg',
 }
 
 export const manifesto = {

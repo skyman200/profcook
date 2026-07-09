@@ -33,25 +33,25 @@ img { display: block; }
 .eyebrow { text-transform: uppercase; letter-spacing: 0.24em; font-size: clamp(0.62rem, 1.1vw, 0.74rem); font-weight: 600; color: var(--faint); }
 
 /* ============ PRELOADER ============ */
-.pre { position: fixed; inset: 0; z-index: 1000; display: grid; place-items: center; background: var(--paper); }
-.pre__inner { text-align: center; width: min(82vw, 520px); color: #08090f; }
+.pre { position: fixed; inset: 0; z-index: 1000; display: grid; place-items: center; background: var(--bg); }
+.pre__inner { text-align: center; width: min(82vw, 520px); color: var(--ink); }
 .pre__name { letter-spacing: 0.34em; font-size: clamp(0.7rem, 2vw, 0.95rem); font-weight: 700; margin-bottom: 22px; padding-left: 0.34em; }
 .pre__pct { font-weight: 900; font-size: clamp(3.6rem, 15vw, 9rem); line-height: 1; letter-spacing: -0.03em; }
 .pre__pct span { font-size: 0.3em; color: var(--accent); margin-left: 0.12em; vertical-align: super; }
-.pre__bar { margin: 26px auto 0; height: 2px; width: 100%; background: rgba(8,9,15,0.14); overflow: hidden; }
-.pre__bar span { display: block; height: 100%; width: 100%; background: #08090f; transform-origin: left; transition: transform 0.1s linear; }
+.pre__bar { margin: 26px auto 0; height: 2px; width: 100%; background: var(--line); overflow: hidden; }
+.pre__bar span { display: block; height: 100%; width: 100%; background: linear-gradient(90deg, var(--accent-2), var(--accent)); transform-origin: left; transition: transform 0.1s linear; }
 
 /* ============ COVER (paper, bold editorial — Hirst cover structure) ============ */
-.cover { position: relative; min-height: 100svh; background: var(--paper); color: #08090f; display: flex; flex-direction: column; padding: clamp(18px, 3.4vw, 40px) clamp(20px, 4vw, 52px) clamp(24px, 4vw, 44px); }
+.cover { position: relative; min-height: 100svh; background: var(--bg); color: var(--ink); display: flex; flex-direction: column; padding: clamp(18px, 3.4vw, 40px) clamp(20px, 4vw, 52px) clamp(24px, 4vw, 44px); }
 .cover__top { display: flex; justify-content: space-between; align-items: center; text-transform: uppercase; letter-spacing: 0.2em; font-size: clamp(0.6rem, 1.2vw, 0.74rem); font-weight: 700; }
-.cover__top .lang b { color: #08090f; } .cover__top .lang span { color: rgba(8,9,15,0.4); }
+.cover__top .lang b { color: var(--ink); } .cover__top .lang span { color: var(--faint); }
 .cover__name { font-weight: 900; font-size: clamp(3.2rem, 15vw, 13.5rem); line-height: 0.86; letter-spacing: -0.04em; text-align: center; }
 .cover__subject { flex: 1; display: flex; align-items: center; justify-content: center; min-height: 0; padding: clamp(8px, 2vw, 22px) 0; }
-.cover__subject img { max-height: min(56vh, 640px); max-width: min(92vw, 560px); width: auto; object-fit: contain; mix-blend-mode: multiply; }
+.cover__subject img { max-height: min(62vh, 720px); max-width: min(92vw, 620px); width: auto; object-fit: contain; }
 .cover__rule { display: flex; align-items: center; gap: clamp(10px, 2vw, 22px); font-weight: 800; font-size: clamp(0.82rem, 2.6vw, 1.75rem); letter-spacing: -0.01em; white-space: nowrap; }
-.cover__rule .ln { flex: 1; height: 2px; background: #08090f; }
+.cover__rule .ln { flex: 1; height: 2px; background: var(--ink); }
 .cover__rule .accent { color: var(--accent); }
-.cover__cue { position: absolute; left: 50%; bottom: 12px; transform: translateX(-50%); font-size: 0.56rem; letter-spacing: 0.3em; font-weight: 600; color: rgba(8,9,15,0.45); animation: cue 2s ease-in-out infinite; }
+.cover__cue { position: absolute; left: 50%; bottom: 12px; transform: translateX(-50%); font-size: 0.56rem; letter-spacing: 0.3em; font-weight: 600; color: var(--faint); animation: cue 2s ease-in-out infinite; }
 @keyframes cue { 0%,100%{opacity:0.35;transform:translate(-50%,0)} 50%{opacity:1;transform:translate(-50%,4px)} }
 
 /* ============ SECTION ============ */
@@ -208,6 +208,6 @@ img { display: block; }
   .lec__kind { justify-self: start; }
   .chap__plate { aspect-ratio: 16 / 10; }
   .system { grid-template-columns: 1fr; } .system__note { text-align: left; }
-  .cover__subject img { mix-blend-mode: multiply; }
+  .cover__subject img { max-height: 48vh; }
 }
 @media (prefers-reduced-motion: reduce) { .cover__cue { animation: none; } .mani__portrait { filter: grayscale(1) brightness(0.7); } }

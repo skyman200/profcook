@@ -69,7 +69,7 @@ export const systems = [
 
 export const chapters = [
   {
-    key: 'CLINIC', en: 'CLINIC', ko: '임상', index: '01', image: 'images/clinic-1.jpg',
+    key: 'CLINIC', en: 'CLINIC', ko: '임상', index: '01', image: 'images/g-pilates.jpg',
     headline: '환자를 보던 손이,\n임상실습을 시스템으로 만든다',
     body: 'SOAP 기록, 루브릭 평가, 출석, 병원 연계. 흩어져 있던 임상실습의 모든 순간을 하나의 흐름으로 묶었다.',
   },

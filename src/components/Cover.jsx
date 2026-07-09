@@ -6,7 +6,7 @@ export default function Cover({ profile }) {
   return (
     <section className="cover">
       <div className="cover__top">
-        <span>{profile.nameEn}</span>
+        <span>{profile.era}</span>
         <span className="lang"><b>KO</b> <span>/ EN</span></span>
       </div>
 
