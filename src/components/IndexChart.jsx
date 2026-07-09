@@ -80,7 +80,7 @@ export default function IndexChart() {
                 ))}
               </g>
 
-              <text x={PAD} y={PAD - 34} fill="#59626f" fontFamily="Cinzel" fontSize="12" letterSpacing="2">
+              <text x={PAD} y={PAD - 34} fill="#6a6560" fontFamily="Pretendard Variable, Pretendard, sans-serif" fontWeight="600" fontSize="12" letterSpacing="2">
                 BUILD ACTIVITY · 0–100
               </text>
 

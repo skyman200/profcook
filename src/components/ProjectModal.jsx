@@ -33,7 +33,7 @@ export default function ProjectModal({ project, onClose }) {
             <div className="modal__body">
               <div className="modal__domain">{domains[project.domain].ko} · {project.domain}</div>
               <h3 className="modal__title">{project.title}</h3>
-              <div className="modal__en">{project.en} · {project.year}</div>
+              <div className="modal__en">{project.en}</div>
               <p className="modal__desc">{project.desc}</p>
               <ul className="modal__points">
                 {project.points.map((pt, i) => <li key={i}>{pt}</li>)}
@@ -41,6 +41,9 @@ export default function ProjectModal({ project, onClose }) {
               <div className="modal__tags">
                 {project.stack.map((s) => <span key={s}>{s}</span>)}
               </div>
+              {project.url && (
+                <a className="modal__open" href={project.url} target="_blank" rel="noopener noreferrer">앱 열기 →</a>
+              )}
             </div>
           </motion.div>
         </motion.div>
