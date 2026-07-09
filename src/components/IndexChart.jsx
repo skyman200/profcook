@@ -65,12 +65,12 @@ export default function IndexChart() {
             <svg width={W} height={H} viewBox={`0 0 ${W} ${H}`}>
               <defs>
                 <linearGradient id="idxgrad" x1="0" y1="0" x2="1" y2="0">
-                  <stop offset="0" stopColor="#7ca8ff" />
-                  <stop offset="1" stopColor="#46e6c2" />
+                  <stop offset="0" stopColor="#ffc074" />
+                  <stop offset="1" stopColor="#ff8a2a" />
                 </linearGradient>
                 <linearGradient id="idxfill" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0" stopColor="#46e6c2" stopOpacity="0.26" />
-                  <stop offset="1" stopColor="#46e6c2" stopOpacity="0" />
+                  <stop offset="0" stopColor="#ff8a2a" stopOpacity="0.28" />
+                  <stop offset="1" stopColor="#ff8a2a" stopOpacity="0" />
                 </linearGradient>
               </defs>
 

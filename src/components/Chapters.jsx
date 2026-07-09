@@ -3,7 +3,7 @@ import Reveal from './Reveal'
 
 const EASE = [0.22, 1, 0.36, 1]
 
-export default function Chapters({ chapters, projects }) {
+export default function Chapters({ chapters, projects, onSelect }) {
   return (
     <div className="wrap">
       {chapters.map((ch) => {
@@ -22,22 +22,28 @@ export default function Chapters({ chapters, projects }) {
                 <Reveal delay={0.1}><p className="chap__body">{ch.body}</p></Reveal>
               </div>
             </div>
+
+            <Reveal delay={0.05}>
+              <div className="chap__plate"><img src={ch.image} alt={ch.ko} loading="lazy" /></div>
+            </Reveal>
+
             <div className="chap__grid">
               {items.map((p, i) => (
-                <motion.article
-                  className="card" key={p.id}
-                  initial={{ opacity: 0, y: 24 }}
-                  whileInView={{ opacity: 1, y: 0 }}
+                <motion.button
+                  type="button" className="card" key={p.id} onClick={() => onSelect(p)}
+                  initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: '-6%' }}
-                  transition={{ duration: 0.7, delay: Math.min(i * 0.05, 0.25), ease: EASE }}
-                >
-                  <div className="card__head">
-                    <h3 className="card__title">{p.title}</h3>
-                    <span className="card__en">{p.en}</span>
+                  transition={{ duration: 0.7, delay: Math.min(i * 0.05, 0.25), ease: EASE }}>
+                  <div className="card__thumb"><img src={p.image} alt={p.title} loading="lazy" /></div>
+                  <div className="card__pad">
+                    <div className="card__head">
+                      <h3 className="card__title">{p.title}</h3>
+                      <span className="card__en">{p.en}</span>
+                    </div>
+                    <p className="card__desc">{p.desc}</p>
+                    <span className="card__more">자세히 →</span>
                   </div>
-                  <p className="card__desc">{p.desc}</p>
-                  <div className="card__tags">{p.stack.map((s) => <span key={s}>{s}</span>)}</div>
-                </motion.article>
+                </motion.button>
               ))}
             </div>
           </section>
