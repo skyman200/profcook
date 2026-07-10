@@ -17,10 +17,10 @@ export const profile = {
 // intro(mm[0]) → 4개 그리드(HANDS/CODE/FIELD/STAGE) → INDEX 인트로 순.
 export const words = {
   intro: {
-    headline: 'HOW DID HE\nBECOME THE\nSYSTEM?',
+    headline: 'CAN YOU\nREHABILITATE\nA SYSTEM?',
     body: {
-      ko: '환자를 보던 임상가가 강단에 섰다. 그리고 채점·실습 기록·성과 관리·문서 같은 교육의 병목을 하나씩 소프트웨어로 풀기 시작했다. 이제 그의 결과물은 강의만이 아니라, 강의를 돌아가게 하는 시스템이다.',
-      en: 'A clinician who treated patients took the podium. Then, one by one, he began dissolving the bottlenecks of education — grading, practicum records, performance management, paperwork — into software. His output is no longer just the lecture, but the system that runs the lecture.',
+      ko: '환자의 몸을 재활시키던 물리치료사가, 이번에는 교육의 병목을 재활시키기 시작했다. 채점·실습 기록·성과 관리·문서 — 굳어 있던 흐름을 하나씩 소프트웨어로 풀어냈다. 몸이든 시스템이든, 치료의 원리는 같다: 막힌 곳을 찾아 움직이게 하는 것.',
+      en: 'A physical therapist who rehabilitated bodies began rehabilitating the bottlenecks of education — grading, practicum records, performance management, paperwork — loosening each stiffened workflow with software. Body or system, the principle of treatment is the same: find what is stuck, and make it move.',
     },
   },
   grid: [
@@ -64,8 +64,8 @@ export const words = {
   index: {
     word: 'INDEX',
     body: {
-      ko: '이제부터 우리는 이력서를 보지 않는다. 이력을 만든 활동 그래프를 본다. 시간 순으로 펼친 10년의 봉우리.',
-      en: 'From here on we no longer read the résumé. We read the activity graph that produced it. A decade of peaks, unrolled in time.',
+      ko: '경력을 줄글로 쓰는 대신 시간 위에 폈다. 봉우리마다 배포된 시스템과 강연이 있다 — 10년의 활동 그래프.',
+      en: 'Instead of a résumé in prose, the career is laid out on a timeline. At every peak, a shipped system or a lecture — a decade as an activity graph.',
     },
   },
 }
