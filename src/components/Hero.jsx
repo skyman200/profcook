@@ -19,13 +19,13 @@ export default function Hero({ profile, intro }) {
   const stageBg = useTransform(scrollYProgress, [0, 0.42, 0.52], ['#ffffff', '#ffffff', '#0a0a0a'])
   const typeColor = useTransform(scrollYProgress, [0.42, 0.52], ['#08090f', '#ecf1fa'])
 
-  // 2막 — 어둠 속 얼굴 리빌: 얼굴(36%, 22%)에서 시작한 빛이 스크롤로 번져 나간다
+  // 2막 — 어둠 속 얼굴 리빌: 얼굴(50%, 33%)에서 시작한 빛이 스크롤로 번져 나간다
   const subjectOpacity = useTransform(scrollYProgress, [0.5, 0.58], [0, 1])
-  const revealX = useTransform(scrollYProgress, [0.54, 0.96], [15, 62])
-  const revealY = useTransform(scrollYProgress, [0.54, 0.96], [12, 78])
-  const maskImage = useMotionTemplate`radial-gradient(ellipse ${revealX}% ${revealY}% at 36% 22%, rgba(0,0,0,1) 46%, rgba(0,0,0,0) 100%)`
-  const portraitScale = useTransform(scrollYProgress, [0.54, 0.96], [1.14, 1])
-  const portraitX = useTransform(scrollYProgress, [0.54, 0.96], ['15%', '4%'])
+  const revealX = useTransform(scrollYProgress, [0.54, 0.96], [17, 66])
+  const revealY = useTransform(scrollYProgress, [0.54, 0.96], [14, 80])
+  const maskImage = useMotionTemplate`radial-gradient(ellipse ${revealX}% ${revealY}% at 50% 33%, rgba(0,0,0,1) 46%, rgba(0,0,0,0) 100%)`
+  const portraitScale = useTransform(scrollYProgress, [0.54, 0.96], [1.12, 1])
+  const portraitX = useTransform(scrollYProgress, [0.54, 0.96], ['3%', '0%'])
   const brightness = useTransform(scrollYProgress, [0.54, 0.9], [0.82, 1.02])
   const portraitFilter = useMotionTemplate`brightness(${brightness}) contrast(1.06)`
 

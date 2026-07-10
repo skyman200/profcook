@@ -181,8 +181,8 @@ export const contact = {
   email: 'cdi3477@dit.ac.kr',
   label: { ko: '강의·자문 문의', en: 'LECTURES & ADVISORY' },
   note: {
-    ko: '강의·워크숍·자문 요청은 아래 메일로 보내주세요.',
-    en: 'For lectures, workshops, and advisory work, reach out below.',
+    ko: '실제로 배포한 시스템 12종과 현장 사례로 채우는 AI·교육혁신 강연 — 다음 무대를 문의하세요.',
+    en: 'Lectures on AI-driven education innovation, built on 12 systems actually shipped — book the next stage.',
   },
   copy: { ko: '이메일 주소 복사', en: 'Copy email address' },
   copied: { ko: '복사됨 ✓', en: 'Copied ✓' },
@@ -211,12 +211,12 @@ export const ledger = {
   total: { count: 12, label: { ko: '시스템 총합', en: 'systems in total' } },
   asOf: { ko: '기준 · 2026.07', en: 'As of · 2026.07' },
   specimens: [
-    { name: 'Web Apps', sub: { ko: '배포된 웹 시스템', en: 'Deployed web systems' }, count: 7, unit: { ko: '종', en: 'apps' } },
-    { name: 'Infra Pipelines', sub: { ko: '성과관리 · 문서 · 데이터 자동화', en: 'Performance · docs · data automation' }, count: 5, unit: { ko: '건', en: 'pipelines' } },
-    { name: 'Invited Lectures', sub: { ko: '2026 강연 시즌', en: '2026 lecture season' }, count: 3, unit: { ko: '회', en: 'talks' } },
-    { name: 'PT Log', sub: { ko: '유튜브 임상 강의', en: 'YouTube clinical lectures' }, count: 5, unit: { ko: '편', en: 'videos' } },
-    { name: '@pila_strong', sub: { ko: '인스타그램 게시물', en: 'Instagram posts' }, count: 812, unit: { ko: '개', en: 'posts' } },
-    { name: 'Followers', sub: { ko: '인스타그램 팔로워', en: 'Instagram followers' }, count: 1215, unit: { ko: '명', en: 'people' } },
+    { name: 'Olympic Games', sub: { ko: '평창 동계올림픽 의무요원', en: 'PyeongChang Winter Olympics medical staff' }, count: 1, unit: { ko: '대회', en: 'games' } },
+    { name: 'Years in Movement', sub: { ko: '임상 · 현장 · 강단', en: 'Clinic · field · classroom' }, count: 10, unit: { ko: '년 +', en: 'yrs +' } },
+    { name: 'Systems Shipped', sub: { ko: '웹앱 7종 + 자동화 파이프라인 5건', en: '7 web apps + 5 automation pipelines' }, count: 12, unit: { ko: '종', en: 'systems' } },
+    { name: 'Invited Lectures', sub: { ko: '2026 한 시즌에만', en: 'In a single season, 2026' }, count: 3, unit: { ko: '회', en: 'talks' } },
+    { name: 'Clinical Films', sub: { ko: '유튜브 피티로그 임상 강의', en: 'PT Log clinical lectures on air' }, count: 5, unit: { ko: '편', en: 'films' } },
+    { name: 'Community', sub: { ko: '게시물 812 · 인스타그램 팔로워', en: '812 posts · Instagram followers' }, count: 1215, unit: { ko: '명', en: 'people' } },
   ],
 }
 
