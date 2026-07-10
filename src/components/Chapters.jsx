@@ -1,9 +1,11 @@
 import { motion } from 'framer-motion'
 import Reveal from './Reveal'
+import { useLocale } from '../lib/locale'
 
 const EASE = [0.22, 1, 0.36, 1]
 
 export default function Chapters({ chapters, projects, systems, onSelect }) {
+  const { L, lang } = useLocale()
   return (
     <div className="wrap">
       {chapters.map((ch) => {
@@ -17,15 +19,17 @@ export default function Chapters({ chapters, projects, systems, onSelect }) {
                 <Reveal><div className="chap__key">{ch.en}<em>{ch.ko}</em></div></Reveal>
                 <Reveal delay={0.05}>
                   <h2 className="chap__headline">
-                    {ch.headline.split('\n').map((l, i) => (<span key={i}>{l}<br /></span>))}
+                    {L(ch.headline).split('\n').map((l, i) => (<span key={i}>{l}<br /></span>))}
                   </h2>
                 </Reveal>
-                <Reveal delay={0.1}><p className="chap__body">{ch.body}</p></Reveal>
+                <Reveal delay={0.1}><p className="chap__body">{L(ch.body)}</p></Reveal>
               </div>
             </div>
 
             <Reveal delay={0.05}>
-              <div className="chap__plate"><img src={ch.image} alt={ch.ko} loading="lazy" /></div>
+              <div className="chap__plate" style={ch.plateRatio ? { aspectRatio: ch.plateRatio } : undefined}>
+                <img src={ch.image} alt={lang === 'ko' ? ch.ko : ch.en} loading="lazy" style={{ objectPosition: ch.focus }} />
+              </div>
             </Reveal>
 
             {isInfra ? (
@@ -36,7 +40,7 @@ export default function Chapters({ chapters, projects, systems, onSelect }) {
                     viewport={{ once: true, margin: '-6%' }}
                     transition={{ duration: 0.6, delay: Math.min(i * 0.05, 0.25), ease: EASE }}>
                     <div><span className="system__name">{s.name}</span><span className="system__en">{s.en}</span></div>
-                    <div className="system__note">{s.note}</div>
+                    <div className="system__note">{L(s.note)}</div>
                   </motion.div>
                 ))}
               </div>
@@ -56,8 +60,8 @@ export default function Chapters({ chapters, projects, systems, onSelect }) {
                         <h3 className="card__title">{p.title}</h3>
                         <span className="card__en">{p.en}</span>
                       </div>
-                      <p className="card__desc">{p.desc}</p>
-                      <span className="card__more">자세히 →</span>
+                      <p className="card__desc">{L(p.desc)}</p>
+                      <span className="card__more">{lang === 'ko' ? '자세히 →' : 'Details →'}</span>
                     </div>
                   </motion.button>
                 ))}

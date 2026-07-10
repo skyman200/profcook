@@ -1,46 +1,47 @@
-import { useEffect, useRef, useState } from 'react'
-import { animate, useInView } from 'framer-motion'
+import { useRef, useState } from 'react'
+import { useScroll, useMotionValueEvent } from 'framer-motion'
 import Reveal from './Reveal'
+import { useLocale } from '../lib/locale'
 
-function CountUp({ to, suffix }) {
+// 스크롤이 진행도를 직접 구동 — 내리면 숫자가 차오르고 올리면 되감긴다.
+const easeOut = (t) => 1 - Math.pow(1 - t, 3)
+
+// hirst의 Biological Specimen Ledger 포맷 —
+// 세리프 표본명 + 부제(학명 자리) + 대형 숫자 + 단위, 성근 그리드.
+export default function Ledger({ data }) {
+  const { L } = useLocale()
   const ref = useRef(null)
-  const inView = useInView(ref, { once: true, margin: '-15%' })
-  const [n, setN] = useState(0)
-  useEffect(() => {
-    if (!inView) return
-    const controls = animate(0, to, {
-      duration: 1.4,
-      ease: [0.22, 1, 0.36, 1],
-      onUpdate: (v) => setN(v),
-    })
-    return () => controls.stop()
-  }, [inView, to])
-  return <span ref={ref}>{Math.round(n)}{suffix ? <em>{suffix}</em> : null}</span>
-}
+  const [t, setT] = useState(0)
+  const { scrollYProgress } = useScroll({ target: ref, offset: ['start 95%', 'start 30%'] })
+  useMotionValueEvent(scrollYProgress, 'change', (v) => setT(v))
+  const k = easeOut(Math.min(1, Math.max(0, t)))
+  const n = (count) => Math.round(count * k).toLocaleString()
 
-export default function Ledger({ projectCount }) {
-  const stats = [
-    { to: projectCount, suffix: '+', label: '빌드한 시스템 · 프로젝트', en: 'Systems Built' },
-    { to: 3, suffix: '', label: '2026 초청 강연', en: 'Invited Lectures' },
-    { to: 4, suffix: '', label: '도메인 · 임상 · 교육 · 데이터 · 인프라', en: 'Domains' },
-    { to: 3, suffix: '', label: '문서 자동화 포맷 · PDF · DOCX · HWPX', en: 'Doc Formats' },
-  ]
   return (
-    <section className="section section--line">
+    <section className="ledger section--line">
       <div className="wrap">
-        <Reveal><div className="eyebrow">LEDGER</div></Reveal>
-        <Reveal delay={0.05}>
-          <div className="ledger__grid" style={{ marginTop: 22 }}>
-            {stats.map((s) => (
-              <div className="stat" key={s.label}>
-                <div className="stat__num"><CountUp to={s.to} suffix={s.suffix} /></div>
-                <div className="stat__label">{s.label}</div>
-                <div className="stat__en">{s.en}</div>
-              </div>
-            ))}
+        <Reveal>
+          <div className="ledger__head">
+            <h2 className="ledger__title">{data.title}</h2>
+            <div className="ledger__total">
+              <b>{n(data.total.count)}</b> {L(data.total.label)} <span>{L(data.asOf)}</span>
+            </div>
           </div>
         </Reveal>
-        <div className="ledger__asof">As of 2026.07</div>
+        <div className="ledger__grid" ref={ref}>
+          {data.specimens.map((s, i) => (
+            <Reveal key={s.name} delay={Math.min(i * 0.05, 0.25)}>
+              <div className="specimen">
+                <div className="specimen__name">{s.name}</div>
+                <div className="specimen__sub">{L(s.sub)}</div>
+                <div className="specimen__row">
+                  <span className="specimen__num">{n(s.count)}</span>
+                  <span className="specimen__unit">{L(s.unit)}</span>
+                </div>
+              </div>
+            </Reveal>
+          ))}
+        </div>
       </div>
     </section>
   )

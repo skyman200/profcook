@@ -2,24 +2,121 @@ export const profile = {
   name: '김강훈',
   nameEn: 'KIM KANG-HOON',
   tagline: 'MOVE BUT BETTER',
-  years: '2016 — 현재',
-  title: '동의과학대학교 물리치료과 교수 · 학과장',
-  titleEn: 'Professor & Chair · Dept. of Physical Therapy · Dong-eui Institute of Technology',
+  years: '2016 — PRESENT',
+  title: '동의과학대학교 물리치료과 교수·학과장 · AID HUB 센터 팀장',
+  titleEn: 'Professor & Chair, Dept. of Physical Therapy · Team Lead, AID HUB Center · DIT',
   role: 'Professor of Physical Therapists',
   era: 'PHYSICAL THERAPY × SYSTEMS',
   lab: '본관 410호',
-  cover: 'images/hero-portrait.jpg',
+  cover: 'images/cover-portrait.jpg',
   portrait: 'images/clinic-1.jpg',
 }
 
-export const manifesto = {
-  eyebrow: 'HOW A CLINICIAN BECAME A SYSTEM',
-  headline: '그는 어떻게\n시스템이 되었나?',
-  body: '환자를 보던 임상가가 강단에 섰다. 그리고 채점·실습 기록·성과 관리·문서 같은 교육의 병목을 하나씩 소프트웨어로 풀기 시작했다. 30년 뒤 그의 결과물은 강의만이 아니라, 강의를 돌아가게 하는 시스템이다.',
+// hirst 포맷의 내러티브 워드 섹션 — 대형 세리프 한 단어 + 아이콘 + 문단.
+// intro(mm[0]) → 4개 그리드(HANDS/CODE/FIELD/STAGE) → INDEX 인트로 순.
+export const words = {
+  intro: {
+    headline: 'HOW DID HE\nBECOME THE\nSYSTEM?',
+    body: {
+      ko: '환자를 보던 임상가가 강단에 섰다. 그리고 채점·실습 기록·성과 관리·문서 같은 교육의 병목을 하나씩 소프트웨어로 풀기 시작했다. 이제 그의 결과물은 강의만이 아니라, 강의를 돌아가게 하는 시스템이다.',
+      en: 'A clinician who treated patients took the podium. Then, one by one, he began dissolving the bottlenecks of education — grading, practicum records, performance management, paperwork — into software. His output is no longer just the lecture, but the system that runs the lecture.',
+    },
+  },
+  grid: [
+    {
+      id: 'hands',
+      word: 'HANDS',
+      icon: 'hands',
+      body: {
+        ko: '도수치료·근막통증치료·임상운동학 — 모든 것은 손에서 시작됐다. DNS(Prague School)를 수료하고 필라테스로 몸의 언어를 다듬었다. 환자를 만지던 감각이 지금도 모든 시스템의 출발점이다.',
+        en: 'Manual therapy, myofascial pain treatment, clinical kinesiology — everything began with the hands. Trained in DNS (Prague School) and refined through Pilates. The sense of touching patients is still the origin of every system he builds.',
+      },
+    },
+    {
+      id: 'code',
+      word: 'CODE',
+      icon: 'code',
+      body: {
+        ko: '채점, 실습 기록, 성과 관리, 문서. 교육의 병목마다 소프트웨어를 세웠다. PT SMART, physioCBT, AID 성과관리 — 강의실 밖의 노동을 코드가 대신하게 했다. 손이 비자, 시간이 학생에게 돌아갔다.',
+        en: 'Grading, practicum logs, performance management, documents. At every bottleneck of education he raised software. PT SMART, physioCBT, the AID performance system — code took over the labor outside the classroom. As his hands emptied, time returned to the students.',
+      },
+    },
+    {
+      id: 'field',
+      word: 'FIELD',
+      icon: 'mountain',
+      body: {
+        ko: '트레일러닝 피지오부스, 평창 동계올림픽 의무요원, AI 러닝 바이오메카닉스. 강의실의 지식은 현장에서 검증된다. 산과 경기장과 클리닉 — 몸이 움직이는 모든 곳이 실험실이다.',
+        en: 'A physio booth on trail-running courses, medical staff at the PyeongChang Winter Olympics, AI running biomechanics. Classroom knowledge is verified in the field. Mountains, stadiums, clinics — wherever a body moves is a laboratory.',
+      },
+    },
+    {
+      id: 'stage',
+      word: 'STAGE',
+      icon: 'mic',
+      body: {
+        ko: '강단, 초청 강연, 유튜브 피티로그, @pila_strong. 한 사람을 고치는 손에서, 고치는 법을 전파하는 채널로. 지식은 공유될 때 시스템이 된다.',
+        en: 'The podium, invited lectures, the PT Log YouTube channel, @pila_strong. From hands that fix one person to channels that teach the fixing. Knowledge becomes a system when it is shared.',
+      },
+    },
+  ],
+  index: {
+    word: 'INDEX',
+    body: {
+      ko: '이제부터 우리는 이력서를 보지 않는다. 이력을 만든 활동 그래프를 본다. 시간 순으로 펼친 10년의 봉우리.',
+      en: 'From here on we no longer read the résumé. We read the activity graph that produced it. A decade of peaks, unrolled in time.',
+    },
+  },
 }
 
-export const bio =
-  '도수치료·근막통증도수치료·임상운동학을 가르치는 물리치료 교육자. DNS(Prague School) 등 근거 기반 임상을 훈련하고, 트레일러닝 피지오부스·방문재활 같은 현장에 직접 선다. 동시에 임상실습·채점·성과관리·문서 같은 교육의 병목을 소프트웨어로 다시 설계한다.'
+// 스티키 가로 타임라인 데이터 — 연도는 소수(2018.08 ≈ 2018년 2월).
+export const timeline = {
+  start: 2015.6,
+  end: 2026.95,
+  preNote: {
+    ko: '이 이전 — 임상가의 시간. 도수치료 · DNS Prague School · 필라테스',
+    en: 'Before this — the clinician years. Manual therapy · DNS Prague School · Pilates',
+  },
+  axis: {
+    title: 'BUILD ACTIVITY',
+    sub: { ko: '활동 지수 0–100', en: 'Activity index 0–100' },
+    src: { ko: '배포·강연·미디어 활동 기반', en: 'Based on deploys, lectures, media' },
+  },
+  events: [
+    { date: 2016.15, label: { ko: 'REDCORE 트레이닝 센터 운영 시작', en: 'Opens REDCORE Training Center' } },
+    { date: 2018.08, label: { ko: '평창 동계올림픽 의무요원', en: 'PyeongChang Olympics medical staff' } },
+    { date: 2021.15, label: { ko: '동의과학대 물리치료과 부임', en: 'Joins DIT Dept. of Physical Therapy' } },
+    { date: 2025.65, label: { ko: '바이브코딩 전환 — 첫 시스템 빌드', en: 'Vibe-coding pivot — first builds' } },
+    { date: 2025.85, label: { ko: '성적 메일러 자동화', en: 'Grade-mailer automation' } },
+    { date: 2026.02, label: { ko: '물리치료과 학과장 취임', en: 'Appointed Chair of Physical Therapy' } },
+    { date: 2026.35, label: { ko: '한국전문대교육협의회 초청 강연', en: 'Invited lecture · KCCE' }, row: 2 },
+    { date: 2026.42, label: { ko: '동의과학대 AID HUB 센터 팀장', en: 'Team Lead, DIT AID HUB Center' } },
+    { date: 2026.5, label: { ko: '교수학습개발센터 · 법인협의회 강연', en: 'Lectures · CTL & KAPCF' }, row: 2 },
+  ],
+  // projectId → src/data/projects.js 의 projects[].id
+  works: [
+    { date: 2025.98, projectId: 'ptsmart', year: '2026' },
+    { date: 2026.07, projectId: 'cbt', year: '2026' },
+    { date: 2026.16, projectId: 'pspeak', year: '2026' },
+    { date: 2026.25, projectId: 'redcore', year: '2026' },
+    { date: 2026.33, projectId: 'torun', year: '2026' },
+    { date: 2026.42, projectId: 'romfit', year: '2026' },
+    { date: 2026.5, projectId: 'physio', year: '2026' },
+  ],
+  trend: [
+    [2015.6, 1], [2016.15, 7], [2016.6, 3], [2017.2, 4], [2017.7, 3],
+    [2018.08, 14], [2018.4, 4], [2019, 3], [2019.6, 4], [2020.2, 3],
+    [2020.8, 4], [2021.15, 11], [2021.6, 5], [2022.2, 4], [2023, 5],
+    [2023.8, 4], [2024.4, 6], [2025, 7], [2025.4, 9], [2025.65, 20],
+    [2025.8, 26], [2025.98, 44], [2026.07, 52], [2026.16, 60],
+    [2026.25, 68], [2026.33, 76], [2026.42, 86], [2026.5, 96], [2026.6, 100],
+  ],
+  peaks: [
+    { date: 2018.08, value: 14, label: { ko: '평창 의무요원', en: 'PyeongChang Olympics' } },
+    { date: 2025.98, value: 44, label: { ko: 'PT SMART 출시', en: 'PT SMART ships' } },
+    { date: 2026.6, value: 100, label: { ko: '초청 강연 시즌', en: 'Lecture season' } },
+  ],
+}
 
 export const principles = [
   { en: 'Good PT is evidence-based', ko: '근거에 기반한다' },
@@ -35,38 +132,99 @@ export const principles = [
 ]
 
 export const gallery = [
-  { img: 'images/g-dns.jpg', cap: 'DNS · Prague School 수료 (Kolář)' },
-  { img: 'images/g-capstone.jpg', cap: '캡스톤 디자인 콘테스트 지도' },
-  { img: 'images/g-team.jpg', cap: '제주 트레일러닝 · 스포츠 현장' },
-  { img: 'images/g-pilates.jpg', cap: '필라테스 · 움직임 임상 지도' },
+  { img: 'images/g-dns.jpg', cap: { ko: 'DNS · Prague School 수료 (Kolář)', en: 'DNS · Prague School (Kolář)' } },
+  { img: 'images/g-capstone.jpg', cap: { ko: '캡스톤 디자인 콘테스트 지도', en: 'Capstone design contest mentoring' } },
+  { img: 'images/g-team.jpg', cap: { ko: '제주 트레일러닝 · 스포츠 현장', en: 'Jeju trail running · sports field' } },
+  { img: 'images/g-pilates.jpg', cap: { ko: '필라테스 · 움직임 임상 지도', en: 'Pilates · movement clinic' } },
 ]
 
 export const lectures = [
-  { period: '2026년 5월', date: '2026.05', host: '한국전문대교육협의회', kind: '초청 강연' },
-  { period: '2026년 7월', date: '2026.07', host: '동의과학대학교 교수학습개발센터', kind: '초청 강연' },
-  { period: '2026년 7월', date: '2026.07', host: '한국전문대법인협의회', kind: '초청 강연' },
+  { period: { ko: '2026년 5월', en: 'May 2026' }, date: '2026.05', host: { ko: '한국전문대교육협의회', en: 'Korean Council for University College Education' }, kind: { ko: '초청 강연', en: 'Invited lecture' } },
+  { period: { ko: '2026년 7월', en: 'July 2026' }, date: '2026.07', host: { ko: '동의과학대학교 교수학습개발센터', en: 'DIT Center for Teaching & Learning' }, kind: { ko: '초청 강연', en: 'Invited lecture' } },
+  { period: { ko: '2026년 7월', en: 'July 2026' }, date: '2026.07', host: { ko: '한국전문대법인협의회', en: 'Korean Assoc. of Private College Foundations' }, kind: { ko: '초청 강연', en: 'Invited lecture' } },
 ]
-export const lecturesTheme = 'AI·자동화 기반 교육 혁신과 디지털 전환'
+export const lecturesTheme = {
+  ko: 'AI·자동화 기반 교육 혁신과 디지털 전환',
+  en: 'AI & automation-driven innovation and digital transformation in education',
+}
 export const lectureImage = 'images/lecture-stage.jpg'
 
 export const instagram = {
   handle: 'pila_strong',
   url: 'https://www.instagram.com/pila_strong/',
-  bio: '#동의과학대 #물리치료과 #교수 · #필라테스 · #평창동계올림픽 의무요원 — AI·바이브코딩으로 물리치료 교육을 다시 쓰는 기록.',
+  name: '필라스트롱 · Kim Cook',
+  avatar: 'images/insta/profile.jpg',
+  followers: '1,215',
+  posts: '812',
+  bio: {
+    ko: '#동의과학대 #물리치료과 #교수 · #평창동계올림픽 #의무요원 · #필라테스 — 그레이쿡처럼, 한국의 “김쿡”이 되겠습니다.',
+    en: '#DIT #PhysicalTherapy #Professor · #PyeongChang #MedicalStaff · #Pilates — aiming to become Korea’s “Kim Cook,” after Gray Cook.',
+  },
   items: [
-    { img: 'images/insta/insta-10.jpg', cap: '물리치료과 바이브코딩 경진대회', kind: 'IMG' },
-    { img: 'images/insta/insta-1.jpg', cap: 'AI 특강 — 많이 써 본 사람이 장땡', kind: 'IMG' },
-    { img: 'images/insta/insta-6.jpg', cap: '본캐 · 살로몬 트레일러닝 테이핑', kind: 'VID' },
-    { img: 'images/insta/insta-4.jpg', cap: '복붙 불가, 타이핑 전용 시험 앱', kind: 'VID' },
-    { img: 'images/insta/insta-3.jpg', cap: '실습일지에 디스코드 연동', kind: 'IMG' },
-    { img: 'images/insta/insta-0.jpg', cap: '대전 강의 · AI로 슬라이드까지', kind: 'VID' },
-    { img: 'images/insta/insta-9.jpg', cap: '물리치료과 축구대회 우승', kind: 'VID' },
-    { img: 'images/insta/insta-11.jpg', cap: '디자인도 바이브코딩으로', kind: 'IMG' },
+    { sc: 'Dalxc-JzfQa', img: 'images/insta/Dalxc-JzfQa.jpg', cap: 'AX는 누가 잘할까?', kind: 'IMG' },
+    { sc: 'DakIoSPtStC', img: 'images/insta/DakIoSPtStC.jpg', cap: '대전 강의 · AI로 라이브까지', kind: 'VID' },
+    { sc: 'DaUzEWEBf80', img: 'images/insta/DaUzEWEBf80.jpg', cap: 'AI 김덕진 교수님 특강 · 많이 써 본 사람이 장땡', kind: 'IMG' },
+    { sc: 'DaCphgBhFr3', img: 'images/insta/DaCphgBhFr3.jpg', cap: '가재코드 · Made in Korea', kind: 'VID' },
+    { sc: 'DZ49BL0NHDi', img: 'images/insta/DZ49BL0NHDi.jpg', cap: '실습일지에 디스코드 연동', kind: 'IMG' },
+    { sc: 'DZotMugTDGg', img: 'images/insta/DZotMugTDGg.jpg', cap: '바이브코딩 일주일 딸깍', kind: 'VID' },
+    { sc: 'DZlvXUJMXDR', img: 'images/insta/DZlvXUJMXDR.jpg', cap: '학교에서 배운 걸 현장에서', kind: 'VID' },
+    { sc: 'DZgbVcfOtYP', img: 'images/insta/DZgbVcfOtYP.jpg', cap: '본캐 · 살로몬 트레일러닝 테이핑', kind: 'VID' },
+    { sc: 'DZcpl2LhwGs', img: 'images/insta/DZcpl2LhwGs.jpg', cap: '물리치료과 교수가 맞는지?', kind: 'IMG' },
+    { sc: 'DY5yRFNF9cE', img: 'images/insta/DY5yRFNF9cE.jpg', cap: '재활 · 소비자 중심으로', kind: 'VID' },
+    { sc: 'DY4B_4eOsk9', img: 'images/insta/DY4B_4eOsk9.jpg', cap: '물리치료과 축구대회 우승', kind: 'VID' },
+    { sc: 'DYe3tRNGPbC', img: 'images/insta/DYe3tRNGPbC.jpg', cap: '물리치료과 바이브코딩 경진대회', kind: 'IMG' },
   ],
 }
 
 export const contact = {
   email: 'cdi3477@dit.ac.kr',
-  label: '강의·자문 문의',
-  note: '강의·워크숍·자문 요청은 아래 메일로 보내주세요.',
+  label: { ko: '강의·자문 문의', en: 'LECTURES & ADVISORY' },
+  note: {
+    ko: '강의·워크숍·자문 요청은 아래 메일로 보내주세요.',
+    en: 'For lectures, workshops, and advisory work, reach out below.',
+  },
+  copy: { ko: '이메일 주소 복사', en: 'Copy email address' },
+  copied: { ko: '복사됨 ✓', en: 'Copied ✓' },
 }
+
+export const youtube = {
+  channel: '피티로그 PT Log',
+  url: 'https://www.youtube.com/channel/UCbvdfC-9nb8NZHq11naapHw',
+  tagline: {
+    ko: '물리치료사로 부자되기 — 마인드셋에서 디벨롭까지',
+    en: 'Thriving as a physical therapist — from mindset to development',
+  },
+  avatar: 'images/youtube/ptlog-avatar.jpg',
+  videos: [
+    { id: 'SwBE9K1YBIs', img: 'images/youtube/ptlog-1.jpg', title: 'Rehab Special Lecture — Core Stability & Fascial Stretching' },
+    { id: 'F2Yq_cFR21w', img: 'images/youtube/ptlog-2.jpg', title: '허리디스크, 무조건 신전(Extension)시키면 안 되는 이유' },
+    { id: 'GFgNe6ErDj8', img: 'images/youtube/ptlog-3.jpg', title: '디스크성 요통(Discogenic Pain)의 임상적 추론과 문진법' },
+    { id: '2xoBdcCIO1s', img: 'images/youtube/ptlog-4.jpg', title: '척추 안정화의 핵심 IAP와 맥켄지 운동법 완벽 정리' },
+    { id: '-LDKLv-SN0s', img: 'images/youtube/ptlog-5.jpg', title: '앉아있을 때 허리 끊어질 듯 아프다면? 디스크성 통증 의심' },
+  ],
+}
+
+// hirst의 Biological Specimen Ledger 포맷 — 세리프 표본명 + 부제 + 대형 숫자 + 단위.
+export const ledger = {
+  title: 'Systems Ledger',
+  total: { count: 12, label: { ko: '시스템 총합', en: 'systems in total' } },
+  asOf: { ko: '기준 · 2026.07', en: 'As of · 2026.07' },
+  specimens: [
+    { name: 'Web Apps', sub: { ko: '배포된 웹 시스템', en: 'Deployed web systems' }, count: 7, unit: { ko: '종', en: 'apps' } },
+    { name: 'Infra Pipelines', sub: { ko: '성과관리 · 문서 · 데이터 자동화', en: 'Performance · docs · data automation' }, count: 5, unit: { ko: '건', en: 'pipelines' } },
+    { name: 'Invited Lectures', sub: { ko: '2026 강연 시즌', en: '2026 lecture season' }, count: 3, unit: { ko: '회', en: 'talks' } },
+    { name: 'PT Log', sub: { ko: '유튜브 임상 강의', en: 'YouTube clinical lectures' }, count: 5, unit: { ko: '편', en: 'videos' } },
+    { name: '@pila_strong', sub: { ko: '인스타그램 게시물', en: 'Instagram posts' }, count: 812, unit: { ko: '개', en: 'posts' } },
+    { name: 'Followers', sub: { ko: '인스타그램 팔로워', en: 'Instagram followers' }, count: 1215, unit: { ko: '명', en: 'people' } },
+  ],
+}
+
+// 이전 버전 호환 (Manifesto 컴포넌트가 남아 있는 동안)
+export const manifesto = {
+  eyebrow: 'HOW A CLINICIAN BECAME A SYSTEM',
+  headline: '그는 어떻게\n시스템이 되었나?',
+  body: words.intro.body.ko,
+}
+
+export const bio =
+  '도수치료·근막통증도수치료·임상운동학을 가르치는 물리치료 교육자. DNS(Prague School) 등 근거 기반 임상을 훈련하고, 트레일러닝 피지오부스·방문재활 같은 현장에 직접 선다. 동시에 임상실습·채점·성과관리·문서 같은 교육의 병목을 소프트웨어로 다시 설계한다.'
