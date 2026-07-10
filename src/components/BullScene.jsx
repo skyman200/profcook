@@ -8,7 +8,8 @@ import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js'
 // 커진다(버스트 없음 — 최대 크기에서 인물 초상으로 크로스페이드는 Hero가 담당).
 // progress: 히어로 스크롤 진행도 MotionValue (0~1).
 
-const MODEL_URL = '/models/bull.glb'
+// BASE_URL 기준 — 루트 배포(Vercel)와 서브패스 배포(GitHub Pages /profcook/) 양쪽에서 해석된다.
+const MODEL_URL = `${import.meta.env.BASE_URL}models/bull.glb`
 const SCALE_RANGE = [0.5, 3.2] // 진행도 [0 → FULL_AT]에서의 크기
 const FULL_AT = 0.56           // 이 진행도에 "완전히 커진" 상태 (크로스페이드 완료 지점)
 
