@@ -32,7 +32,7 @@ export default function App() {
         <div className="grain" />
         <LangSwitch />
         <Preloader />
-        <Hero profile={profile} />
+        <Hero profile={profile} intro={words.intro} />
         <div className="dark-body">
           <WordSections words={words} />
           <Timeline data={timeline} profile={profile} projects={projects} onSelect={setSelected} />

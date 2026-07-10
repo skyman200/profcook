@@ -9,6 +9,7 @@ export const profile = {
   era: 'PHYSICAL THERAPY × SYSTEMS',
   lab: '본관 410호',
   cover: 'images/cover-portrait.jpg',
+  coverDark: 'images/portrait-dark.jpg',
   portrait: 'images/clinic-1.jpg',
 }
 

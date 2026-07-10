@@ -44,16 +44,12 @@ export default function WordSections({ words }) {
 
   return (
     <div className="words">
-      <section className="words__intro">
+      {/* 헤드라인은 히어로 리빌 위에 얹히고(레퍼런스 3컷), 본문 리드만 여기서 이어받는다 */}
+      <section className="words__intro words__intro--lede">
         <div className="wrap">
-          <motion.h2 className="words__headline"
-            initial={{ opacity: 0, y: 34 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: '-12%' }}
-            transition={{ duration: 1, ease: EASE }}>
-            {words.intro.headline.split('\n').map((l, i) => (<span key={i}>{l}<br /></span>))}
-          </motion.h2>
           <motion.p className="words__lede"
             initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true, margin: '-12%' }}
-            transition={{ duration: 1, delay: 0.15 }}>
+            transition={{ duration: 1, delay: 0.1 }}>
             {L(words.intro.body)}
           </motion.p>
         </div>
