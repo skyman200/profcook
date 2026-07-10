@@ -70,7 +70,8 @@ button { font-family: inherit; }
 /* ============ HERO — 페이퍼, 초대형 세리프, 스크럽 피사체 ============ */
 .hero { position: relative; height: 460svh; background: var(--paper); color: var(--paper-ink); }
 .hero__stage { position: sticky; top: 0; height: 100svh; overflow: hidden; }
-.hero__act--bull { position: absolute; inset: clamp(70px, 12svh, 130px) 4vw clamp(60px, 10svh, 110px); pointer-events: none; }
+/* 황소는 프레임 없이 무대 전체 — 이름 타이포 뒤까지 덮는다 (타이포는 DOM 순서상 위에 그려짐) */
+.hero__act--bull { position: absolute; inset: 0; pointer-events: none; }
 .hero__bull { width: 100%; height: 100%; }
 .hero__bull canvas { display: block; width: 100%; height: 100%; }
 .hero__subject { position: absolute; inset: clamp(84px, 14svh, 140px) 6vw clamp(70px, 12svh, 120px); display: flex; align-items: center; justify-content: center; pointer-events: none; }
