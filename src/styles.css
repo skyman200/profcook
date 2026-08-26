@@ -304,7 +304,9 @@ button { font-family: inherit; }
 .paper__access { position: absolute; bottom: 8px; right: -6px; font-size: 0.6rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--bg); background: #9db7ff; padding: 3px 8px; border-radius: 3px; box-shadow: 0 3px 8px rgba(0,0,0,.4); }
 .paper__meta { padding-top: 4px; }
 .paper__role { font-size: 0.76rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--faint); }
-.paper__title { margin: 8px 0 12px; font-family: var(--serif); font-weight: 700; font-size: clamp(1rem, 1.5vw, 1.22rem); line-height: 1.32; letter-spacing: 0.01em; }
+.paper__title { margin: 8px 0 6px; font-family: var(--serif); font-weight: 700; font-size: clamp(1rem, 1.5vw, 1.22rem); line-height: 1.32; letter-spacing: 0.01em; }
+.paper__title-ko { margin: 0 0 10px; font-size: 0.86rem; line-height: 1.45; color: var(--muted); }
+.paper__authors { font-size: 0.8rem; color: var(--faint); margin-bottom: 8px; font-style: italic; }
 .paper__journal { font-size: 0.88rem; color: var(--muted); }
 .paper__journal em { color: var(--ink); font-style: italic; }
 .paper__topic { margin-top: 10px; display: inline-block; font-size: 0.74rem; color: var(--faint); border: 1px solid var(--line-2); border-radius: 999px; padding: 3px 11px; }

@@ -35,10 +35,12 @@ export default function Papers({ papers, meta }) {
               </div>
               <div className="paper__meta">
                 <div className="paper__role">{L(p.role)} · {p.year}</div>
-                <h3 className="paper__title">{lang === 'ko' ? p.titleKo : p.title}</h3>
+                <h3 className="paper__title">{p.title}</h3>
+                {lang === 'ko' && <div className="paper__title-ko">{p.titleKo}</div>}
+                <div className="paper__authors">{p.authors}</div>
                 <div className="paper__journal"><em>{p.journal}</em> · {p.vol}</div>
                 <div className="paper__topic">{L(p.topic)}</div>
-                <div className="paper__doi">DOI {p.doi} <span className="paper__open">원문 보기 ↗</span></div>
+                <div className="paper__doi">DOI {p.doi} <span className="paper__open">{lang === 'ko' ? '원문 보기' : 'Full text'} ↗</span></div>
               </div>
             </motion.a>
           ))}
