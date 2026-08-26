@@ -1,28 +1,60 @@
-import { motion } from 'framer-motion'
+import { useRef } from 'react'
+import { motion, useScroll, useTransform, useMotionTemplate } from 'framer-motion'
 import Reveal from './Reveal'
 import { useLocale } from '../lib/locale'
 
-// 인증서 카드 — 각 카드가 자기 스크롤 위치에서 개별 발동(whileInView).
-// 카드의 55%가 보여야 켜지므로, 스크롤에 따라 카드가 하나씩 올라오고 그때 도장이 찍힌다.
-const cardVariants = {
-  hidden: { opacity: 0, y: 54 },
-  show: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 260, damping: 24, mass: 0.9 } },
-}
+// 개별 인증서 — 자신의 스크롤 진행도(카드가 화면 하단→상단으로 지나가는 구간)에 맞춰
+// 카드가 먼저 올라오고(등장), 그 다음 도장이 멀리서 크게 흐릿하게 다가와 선명하게 쿵 찍힌다.
+// 카드마다 뷰포트 통과 시점이 다르므로 같은 줄이어도 왼→오로 하나씩 순차 발동된다.
+function Cert({ c, L, col, cols }) {
+  const ref = useRef(null)
+  // 카드가 화면 하단→상단으로 지나가는 구간을 0→1로 정규화.
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ['start 0.92', 'start 0.12'],
+  })
 
-// 도장 — 멀리서 아주 크고 흐릿하게(초점 밖) 나타나, 가까워질수록 작아지고 선명해져 쿵 찍힘.
-// scale 4.6 → 1, blur 12px → 0 으로 z축 접근감. 같은 줄 도장은 동시에 발동(열 delay 없음).
-const stampVariants = {
-  hidden: { opacity: 0, scale: 4.6, rotate: -28, filter: 'blur(12px)' },
-  show: {
-    opacity: 1, scale: 1, rotate: -12, filter: 'blur(0px)',
-    transition: {
-      delay: 0.3,
-      scale: { duration: 0.66, ease: [0.34, 1.3, 0.5, 1] },
-      rotate: { duration: 0.66, ease: [0.34, 1.3, 0.5, 1] },
-      opacity: { duration: 0.34, ease: 'easeOut' },
-      filter: { duration: 0.52, ease: 'easeOut' },
-    },
-  },
+  // 같은 줄 카드는 진행도가 같으므로, 열 위치(col)만큼 발동 구간을 뒤로 밀어
+  // 왼→오로 1→2→3 순차 등장·날인되게 한다. 한 줄을 (cols+1) 슬롯으로 나눈다.
+  const span = 1 / (cols + 1)
+  const s = col * span
+  // 카드 등장: s ~ s+0.6*span
+  const cardY = useTransform(scrollYProgress, [s, s + span * 0.6], [64, 0])
+  const cardOpacity = useTransform(scrollYProgress, [s, s + span * 0.4], [0, 1])
+  // 도장 날인: 카드 등장 직후(d0) ~ 다음 슬롯 전(d1). 멀리서 크게 흐릿 → 작고 선명
+  const d0 = s + span * 0.5
+  const d1 = s + span * 1.2
+  const stampScale = useTransform(scrollYProgress, [d0, d0 + (d1 - d0) * 0.7, d1], [4.4, 1.12, 1])
+  const stampBlurN = useTransform(scrollYProgress, [d0, d1], [12, 0])
+  const stampBlur = useMotionTemplate`blur(${stampBlurN}px)`
+  const stampOpacity = useTransform(scrollYProgress, [d0, d0 + (d1 - d0) * 0.35], [0, 1])
+  const stampRotate = useTransform(scrollYProgress, [d0, d1], [-30, -12])
+
+  return (
+    <a className={`cert${c.highlight ? ' cert--hl' : ''}`}
+      ref={ref} href={c.image} target="_blank" rel="noopener noreferrer">
+      <motion.div className="cert__stage" style={{ y: cardY, opacity: cardOpacity }}>
+        <div className="cert__frame">
+          <img src={c.image} alt={`${c.course} — Rehabilitation Prague School`} loading="lazy" />
+        </div>
+        {/* 도장은 프레임 밖(clip 없음) stage 안 — 멀리서 다가와 쿵 */}
+        <motion.span
+          className={`cert__stamp${c.type === 'Achievement' ? ' cert__stamp--exam' : ''}`}
+          style={{ scale: stampScale, rotate: stampRotate, opacity: stampOpacity, filter: stampBlur }}
+          aria-hidden="true">
+          <span className="cert__stamp-inner">
+            <b>DNS</b>
+            <i>{c.type === 'Achievement' ? 'PASSED' : 'CERTIFIED'}</i>
+          </span>
+        </motion.span>
+      </motion.div>
+      <motion.div className="cert__cap" style={{ opacity: cardOpacity }}>
+        <div className="cert__course">{c.course}</div>
+        <div className="cert__level">{L(c.level)}{c.hours ? ` · ${c.hours}h` : ''}</div>
+        <div className="cert__date">{c.dateFull}</div>
+      </motion.div>
+    </a>
+  )
 }
 
 export default function Certs({ certs, meta }) {
@@ -55,34 +87,9 @@ export default function Certs({ certs, meta }) {
                 viewport={{ once: true, margin: '-15%' }} transition={{ duration: 0.5 }}>
                 <span>{grp.year}</span>
               </motion.div>
-
-              {/* 각 카드가 자기 스크롤 위치에서 개별 발동 → 스크롤에 따라 하나씩 등장 */}
               <div className="certs__cards">
-                {grp.items.map((c) => (
-                  <motion.a
-                    className={`cert${c.highlight ? ' cert--hl' : ''}`} key={c.id}
-                    href={c.image} target="_blank" rel="noopener noreferrer"
-                    variants={cardVariants} initial="hidden" whileInView="show"
-                    viewport={{ once: true, amount: 0.55 }}>
-                    <div className="cert__stage">
-                      <div className="cert__frame">
-                        <img src={c.image} alt={`${c.course} — Rehabilitation Prague School`} loading="lazy" />
-                      </div>
-                      {/* 도장은 프레임 밖(clip 없음) stage 안에서 멀리서 날아와 쿵 */}
-                      <motion.span className={`cert__stamp${c.type === 'Achievement' ? ' cert__stamp--exam' : ''}`}
-                        variants={stampVariants} aria-hidden="true">
-                        <span className="cert__stamp-inner">
-                          <b>DNS</b>
-                          <i>{c.type === 'Achievement' ? 'PASSED' : 'CERTIFIED'}</i>
-                        </span>
-                      </motion.span>
-                    </div>
-                    <div className="cert__cap">
-                      <div className="cert__course">{c.course}</div>
-                      <div className="cert__level">{L(c.level)}{c.hours ? ` · ${c.hours}h` : ''}</div>
-                      <div className="cert__date">{c.dateFull}</div>
-                    </div>
-                  </motion.a>
+                {grp.items.map((c, i) => (
+                  <Cert key={c.id} c={c} L={L} col={i % 3} cols={Math.min(grp.items.length, 3)} />
                 ))}
               </div>
             </div>
