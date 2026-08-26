@@ -2,22 +2,33 @@ import { motion } from 'framer-motion'
 import Reveal from './Reveal'
 import { useLocale } from '../lib/locale'
 
-// 카드 프레임 — 아래에서 올라오며 살짝 눌리듯 정착
+// 카드 컨테이너 — 자식(프레임/도장/캡션)을 순차로 등장시키는 stagger 오케스트레이터
+const cardVariants = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.14, delayChildren: 0.05 } },
+}
+
+// 인증서 프레임 — 아래에서 올라오며 살짝 눌리듯 정착
 const frameVariants = {
-  hidden: { opacity: 0, y: 46, scale: 0.94 },
+  hidden: { opacity: 0, y: 48, scale: 0.92 },
   show: {
     opacity: 1, y: 0, scale: 1,
     transition: { type: 'spring', stiffness: 240, damping: 22, mass: 0.9 },
   },
 }
 
-// 도장(seal) — 크게 나타나 쿵 찍히듯 축소·회전하며 자리잡음.
-// 부모(.cert)가 hidden→show 트리거하면 자식도 같은 variant 키로 함께 발동된다.
+// 캡션 — 프레임 뒤에 뒤따라
+const capVariants = {
+  hidden: { opacity: 0, y: 12 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.4, ease: [0.22, 1, 0.36, 1] } },
+}
+
+// 도장 — 카드가 자리잡은 뒤, 멀리서(아주 크게+위에서) 날아와 쿵 찍힘
 const stampVariants = {
-  hidden: { opacity: 0, scale: 2.4, rotate: -32 },
+  hidden: { opacity: 0, scale: 5, rotate: -45, y: -60 },
   show: {
-    opacity: 1, scale: 1, rotate: -12,
-    transition: { type: 'spring', stiffness: 420, damping: 12, mass: 1.1, delay: 0.22 },
+    opacity: 1, scale: 1, rotate: -12, y: 0,
+    transition: { type: 'spring', stiffness: 520, damping: 15, mass: 1.4, delay: 0.34 },
   },
 }
 
@@ -56,12 +67,14 @@ export default function Certs({ certs, meta }) {
                   <motion.a
                     className={`cert${c.highlight ? ' cert--hl' : ''}`} key={c.id}
                     href={c.image} target="_blank" rel="noopener noreferrer"
-                    initial="hidden" whileInView="show"
-                    viewport={{ once: true, margin: '-14%' }}
+                    variants={cardVariants} initial="hidden" whileInView="show"
+                    viewport={{ once: true, amount: 0.5 }}
                   >
-                    <motion.div className="cert__frame" variants={frameVariants}>
-                      <img src={c.image} alt={`${c.course} — Rehabilitation Prague School`} loading="lazy" />
-                      {/* 스크롤 진입 시 하나씩 쿵 찍히는 인증 도장 */}
+                    <div className="cert__stage">
+                      <motion.div className="cert__frame" variants={frameVariants}>
+                        <img src={c.image} alt={`${c.course} — Rehabilitation Prague School`} loading="lazy" />
+                      </motion.div>
+                      {/* 도장은 프레임 밖(clip 없음)에서 멀리서 날아와 인증서 위에 쿵 */}
                       <motion.span className={`cert__stamp${c.type === 'Achievement' ? ' cert__stamp--exam' : ''}`}
                         variants={stampVariants} aria-hidden="true">
                         <span className="cert__stamp-inner">
@@ -69,8 +82,8 @@ export default function Certs({ certs, meta }) {
                           <i>{c.type === 'Achievement' ? 'PASSED' : 'CERTIFIED'}</i>
                         </span>
                       </motion.span>
-                    </motion.div>
-                    <motion.div className="cert__cap" variants={frameVariants}>
+                    </div>
+                    <motion.div className="cert__cap" variants={capVariants}>
                       <div className="cert__course">{c.course}</div>
                       <div className="cert__level">{L(c.level)}{c.hours ? ` · ${c.hours}h` : ''}</div>
                       <div className="cert__date">{c.dateFull}</div>

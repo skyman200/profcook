@@ -230,7 +230,7 @@ export const ledger = {
   asOf: { ko: '기준 · 2026.07', en: 'As of · 2026.07' },
   specimens: [
     { name: 'Olympic Games', sub: { ko: '평창 동계올림픽 의무요원', en: 'PyeongChang Winter Olympics medical staff' }, count: 1, unit: { ko: '대회', en: 'games' } },
-    { name: 'Years in Movement', sub: { ko: '임상 · 현장 · 강단', en: 'Clinic · field · classroom' }, count: 10, unit: { ko: '년 +', en: 'yrs +' } },
+    { name: 'Years in Movement', sub: { ko: '임상 · 현장 · 강단', en: 'Clinic · field · classroom' }, count: 20, unit: { ko: '년 +', en: 'yrs +' } },
     { name: 'Systems Shipped', sub: { ko: '웹앱 7종 + 자동화 파이프라인 5건', en: '7 web apps + 5 automation pipelines' }, count: 12, unit: { ko: '종', en: 'systems' } },
     { name: 'Invited Lectures', sub: { ko: '2026 한 시즌에만', en: 'In a single season, 2026' }, count: 3, unit: { ko: '회', en: 'talks' } },
     { name: 'Clinical Films', sub: { ko: '유튜브 피티로그 임상 강의', en: 'PT Log clinical lectures on air' }, count: 5, unit: { ko: '편', en: 'films' } },
