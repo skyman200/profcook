@@ -1,9 +1,10 @@
-// 학술 논문 — 전부 검증 완료(J-STAGE 저자검색 "Kang Hoon Kim" = 정확히 이 4편,
-// 교신저자 이메일 cdi3477@hanmail.net = 사이트 cdi3477@dit.ac.kr 동일 아이디로 본인 확정).
-// 첫 페이지 이미지는 실제 논문 PDF에서 추출(오픈액세스 J Phys Ther Sci).
-// 없는 논문은 넣지 않는다.
+// 학술 논문 — 전부 검증 완료.
+// 국제(J-STAGE 저자검색 "Kang Hoon Kim" 정확히 4편 + 교신저자 cdi3477 이메일로 본인 확정),
+// 국내(KCI/earticle 소속 "부산가톨릭대 대학원·동의과학대"로 본인 확정).
+// 없는 논문은 넣지 않는다. 국내 논문은 표지 이미지 미확보 → 텍스트 카드.
 
-export const papers = [
+// 국제 학술지 (표지 이미지 있음)
+export const papersIntl = [
   {
     id: 'jpts25861',
     title: 'Differences in Transversus Abdominis Muscle Function between Chronic Low Back Pain Patients and Healthy Subjects at Maximum Expiration: Measurement with Real-time Ultrasonography',
@@ -15,7 +16,6 @@ export const papers = [
     year: 2013,
     doi: '10.1589/jpts.25.861',
     url: 'https://doi.org/10.1589/jpts.25.861',
-    pdf: 'https://www.jstage.jst.go.jp/article/jpts/25/7/25_JPTS-2013-075/_pdf/-char/en',
     image: 'images/papers/paper1.jpg',
     topic: { ko: '요통 · 복횡근 · 초음파', en: 'Low back pain · TrA · Ultrasound' },
     access: 'Open Access',
@@ -31,7 +31,6 @@ export const papers = [
     year: 2013,
     doi: '10.1589/jpts.25.907',
     url: 'https://doi.org/10.1589/jpts.25.907',
-    pdf: 'https://www.jstage.jst.go.jp/article/jpts/25/8/25_jpts-2013-074/_pdf/-char/en',
     image: 'images/papers/paper2.jpg',
     topic: { ko: '요통 · 자세 · 복횡근', en: 'Low back pain · Posture · TrA' },
     access: 'Open Access',
@@ -47,7 +46,6 @@ export const papers = [
     year: 2012,
     doi: '10.1589/jpts.24.1273',
     url: 'https://doi.org/10.1589/jpts.24.1273',
-    pdf: 'https://www.jstage.jst.go.jp/article/jpts/24/12/24_1273/_pdf/-char/en',
     image: 'images/papers/paper4.jpg',
     topic: { ko: '척추안정화 · 브릿지운동', en: 'Spinal stability · Bridge' },
     access: 'Open Access',
@@ -63,20 +61,77 @@ export const papers = [
     year: 2013,
     doi: '10.1589/jpts.25.789',
     url: 'https://doi.org/10.1589/jpts.25.789',
-    pdf: 'https://www.jstage.jst.go.jp/article/jpts/25/7/25_jpts-2013-018/_pdf/-char/en',
     image: 'images/papers/paper3.jpg',
     topic: { ko: '호흡근 · 복부근 · 폐기능', en: 'Respiratory · Abdominals · PFT' },
     access: 'Open Access',
   },
 ]
 
+// 국내 학술지 (표지 이미지 미확보 → 텍스트 카드, 한글 제목 우선)
+export const papersKor = [
+  {
+    id: 'jncta2025',
+    titleKo: '초음파를 이용한 목긴근의 크기와 목 굽힘의 최대 근력 유지시간·정적 근지구력 유지시간과의 관계 분석',
+    titleEn: 'Relationship between Longus Colli Size and Maximum Strength/Static Endurance Holding Time of Neck Flexion Using Ultrasonography',
+    authors: '김강훈',
+    role: { ko: '단독저자', en: 'Sole author' },
+    journal: '차세대융합기술학회논문지',
+    journalEn: 'Journal of Next-generation Convergence Technology Association',
+    vol: '9(1): 106–114',
+    year: 2025,
+    doi: '10.33097/JNCTA.2025.09.1.106',
+    url: 'https://doi.org/10.33097/JNCTA.2025.09.1.106',
+    topic: { ko: '목긴근 · 초음파 · 근지구력', en: 'Longus colli · Ultrasound · Endurance' },
+  },
+  {
+    id: 'jksim2023',
+    titleKo: '도수근막이완기법과 폼롤러를 이용한 자가근막이완기법이 만성 긴장성 두통 환자의 통증문턱값 및 신체 도식에 미치는 효과 비교',
+    titleEn: 'Comparison of Effect of Manual Myofascial Release and Self Myofascial Release Technique Using a Foam Roller on Pain Thresholds and Body Schema in Subjects with Chronic Tension-type Headache',
+    authors: '엄주리, 김강훈(교신저자)',
+    role: { ko: '교신저자', en: 'Corresponding author' },
+    journal: '한국통합의학회지',
+    journalEn: 'Journal of The Korean Society of Integrative Medicine',
+    vol: '11(4): 147–155',
+    year: 2023,
+    url: 'https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART003016767',
+    topic: { ko: '근막이완 · 긴장성두통 · 통증문턱값', en: 'Myofascial release · Headache · Pain threshold' },
+  },
+  {
+    id: 'jkci2021',
+    titleKo: '전기근육자극을 적용한 무릎 폄 저항운동 시 넙다리곧은근의 두께 변화에 미치는 즉각적 효과',
+    titleEn: 'Immediate Effect on the Thickness of Rectus Femoris during Knee Extension Resistance Exercise with Electrical Muscle Stimulation',
+    authors: '김강훈',
+    role: { ko: '단독저자', en: 'Sole author' },
+    journal: '한국융합학회논문지',
+    journalEn: 'Journal of the Korea Convergence Society',
+    vol: '12(6): 27–32',
+    year: 2021,
+    url: 'https://www.earticle.net/Article/A395935',
+    topic: { ko: 'EMS · 넙다리곧은근 · 저항운동', en: 'EMS · Rectus femoris · Resistance' },
+  },
+  {
+    id: 'pnf2014',
+    titleKo: '정상인과 만성 요통 환자의 최대 호기 시 외측 복부 근육활동 비교',
+    titleEn: 'A Comparison of Lateral Abdominal Muscle Activation during Maximum Expiration in Chronic Low Back Pain Patients and Healthy Asymptomatic Subjects',
+    authors: '구봉오, 김강훈(교신저자)',
+    role: { ko: '교신저자', en: 'Corresponding author' },
+    journal: 'PNF and Movement',
+    journalEn: 'PNF and Movement',
+    vol: '12(1): 39–43',
+    year: 2014,
+    url: 'https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART002262306',
+    topic: { ko: '요통 · 외측복부근 · 최대호기', en: 'LBP · Lateral abdominals · Expiration' },
+  },
+]
+
 export const papersMeta = {
   label: { ko: '학술 논문', en: 'PUBLICATIONS' },
   title: { ko: '학술 논문', en: 'Peer-reviewed Publications' },
+  intlTitle: { ko: '국제 학술지', en: 'International Journals' },
+  korTitle: { ko: '국내 학술지', en: 'Domestic Journals (Korea)' },
   note: {
-    ko: '국제 학술지 게재 논문 — 요통·복횡근·척추안정화 등 근골격계 물리치료 연구. 표지를 누르면 원문(오픈액세스)으로 연결됩니다.',
-    en: 'Peer-reviewed papers in international journals — musculoskeletal PT research on low back pain and spinal stabilization. Tap a cover to open the full text (open access).',
+    ko: '요통·복횡근·근막이완·척추안정화 등 근골격계 물리치료 연구. 국제 학술지 논문은 표지를 누르면 원문(오픈액세스)으로 연결됩니다.',
+    en: 'Musculoskeletal PT research — low back pain, myofascial release, spinal stabilization. Tap an international cover to open the full text.',
   },
-  count: 4,
-  venue: 'Journal of Physical Therapy Science',
+  count: 8,
 }

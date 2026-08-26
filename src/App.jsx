@@ -11,6 +11,7 @@ import Principles from './components/Principles'
 import Lectures from './components/Lectures'
 import Press from './components/Press'
 import Papers from './components/Papers'
+import Certs from './components/Certs'
 import YouTube from './components/YouTube'
 import Instagram from './components/Instagram'
 import Ledger from './components/Ledger'
@@ -22,7 +23,8 @@ import {
 } from './data/content'
 import { projects, chapters, systems } from './data/projects'
 import { press, research, pressMeta } from './data/press'
-import { papers, papersMeta } from './data/papers'
+import { papersIntl, papersKor, papersMeta } from './data/papers'
+import { certs, certsMeta } from './data/certs'
 
 // hirst-fame-argorithm 포맷 —
 // 프리로더 → 페이퍼 히어로 → 워드 섹션(다크) → INDEX → 스티키 타임라인 → 상세 → 장부 → 컨택트.
@@ -43,7 +45,8 @@ export default function App() {
           <Chapters chapters={chapters} projects={projects} systems={systems} onSelect={setSelected} />
           <Principles principles={principles} />
           <Lectures lectures={lectures} theme={lecturesTheme} image={lectureImage} gallery={gallery} />
-          <Papers papers={papers} meta={papersMeta} />
+          <Papers intl={papersIntl} kor={papersKor} meta={papersMeta} />
+          <Certs certs={certs} meta={certsMeta} />
           <Press press={press} research={research} meta={pressMeta} />
           <YouTube data={youtube} />
           <Instagram data={instagram} />

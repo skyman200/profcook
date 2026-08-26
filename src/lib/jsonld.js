@@ -58,7 +58,13 @@ export const personLd = {
   alumniOf: { '@type': 'EducationalOrganization', name: 'DNS · Prague School of Rehabilitation' },
   hasCredential: [
     { '@type': 'EducationalOccupationalCredential', credentialCategory: '자격', name: '물리치료사' },
-    { '@type': 'EducationalOccupationalCredential', credentialCategory: '수료', name: 'DNS (Dynamic Neuromuscular Stabilization) · Prague School' },
+    { '@type': 'EducationalOccupationalCredential', credentialCategory: '수료', name: 'DNS Course A · Certificate of Achievement · Rehabilitation Prague School', dateCreated: '2025' },
+    { '@type': 'EducationalOccupationalCredential', credentialCategory: '수료', name: 'DNS Course B · Rehabilitation Prague School', dateCreated: '2025' },
+    { '@type': 'EducationalOccupationalCredential', credentialCategory: '수료', name: 'DNS Course C · Rehabilitation Prague School', dateCreated: '2026' },
+    { '@type': 'EducationalOccupationalCredential', credentialCategory: '수료', name: 'DNS Manual Therapy · Rehabilitation Prague School', dateCreated: '2023' },
+    { '@type': 'EducationalOccupationalCredential', credentialCategory: '수료', name: 'DNS Lumbar Spine Disorders · Rehabilitation Prague School', dateCreated: '2026' },
+    { '@type': 'EducationalOccupationalCredential', credentialCategory: '수료', name: 'DNS Running Sports Specific Course · Rehabilitation Prague School', dateCreated: '2026' },
+    { '@type': 'EducationalOccupationalCredential', credentialCategory: '수료', name: 'DNS Skills Course on Scoliosis · Rehabilitation Prague School', dateCreated: '2025' },
   ],
   hasOccupation: [
     {
