@@ -9,15 +9,21 @@ const cardVariants = {
   show: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 260, damping: 24, mass: 0.9 } },
 }
 
-// 도장 — 카드가 자리잡은 뒤 멀리서(크게+위에서) 날아와 쿵 찍힘.
-// 같은 행이 동시에 보여도 열 인덱스만큼 delay를 더해 왼→오 순서로 하나씩 찍힌다.
-const makeStamp = (i) => ({
-  hidden: { opacity: 0, scale: 3.6, rotate: -42, y: -54 },
+// 도장 — 멀리서 아주 크고 흐릿하게(초점 밖) 나타나, 가까워질수록 작아지고 선명해져 쿵 찍힘.
+// scale 4.6 → 1, blur 12px → 0 으로 z축 접근감. 같은 줄 도장은 동시에 발동(열 delay 없음).
+const stampVariants = {
+  hidden: { opacity: 0, scale: 4.6, rotate: -28, filter: 'blur(12px)' },
   show: {
-    opacity: 1, scale: 1, rotate: -12, y: 0,
-    transition: { type: 'spring', stiffness: 520, damping: 15, mass: 1.4, delay: 0.3 + i * 0.42 },
+    opacity: 1, scale: 1, rotate: -12, filter: 'blur(0px)',
+    transition: {
+      delay: 0.3,
+      scale: { duration: 0.66, ease: [0.34, 1.3, 0.5, 1] },
+      rotate: { duration: 0.66, ease: [0.34, 1.3, 0.5, 1] },
+      opacity: { duration: 0.34, ease: 'easeOut' },
+      filter: { duration: 0.52, ease: 'easeOut' },
+    },
   },
-})
+}
 
 export default function Certs({ certs, meta }) {
   const { L, lang } = useLocale()
@@ -52,7 +58,7 @@ export default function Certs({ certs, meta }) {
 
               {/* 각 카드가 자기 스크롤 위치에서 개별 발동 → 스크롤에 따라 하나씩 등장 */}
               <div className="certs__cards">
-                {grp.items.map((c, ci) => (
+                {grp.items.map((c) => (
                   <motion.a
                     className={`cert${c.highlight ? ' cert--hl' : ''}`} key={c.id}
                     href={c.image} target="_blank" rel="noopener noreferrer"
@@ -64,7 +70,7 @@ export default function Certs({ certs, meta }) {
                       </div>
                       {/* 도장은 프레임 밖(clip 없음) stage 안에서 멀리서 날아와 쿵 */}
                       <motion.span className={`cert__stamp${c.type === 'Achievement' ? ' cert__stamp--exam' : ''}`}
-                        variants={makeStamp(ci % 3)} aria-hidden="true">
+                        variants={stampVariants} aria-hidden="true">
                         <span className="cert__stamp-inner">
                           <b>DNS</b>
                           <i>{c.type === 'Achievement' ? 'PASSED' : 'CERTIFIED'}</i>
