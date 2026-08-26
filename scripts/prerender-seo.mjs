@@ -21,6 +21,7 @@ const {
 } = await import(resolve(root, 'src/data/content.js'))
 const { projects, systems, chapters } = await import(resolve(root, 'src/data/projects.js'))
 const { press, research } = await import(resolve(root, 'src/data/press.js'))
+const { papers } = await import(resolve(root, 'src/data/papers.js'))
 
 const esc = (s = '') =>
   String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
@@ -37,6 +38,7 @@ const prin = principles.map((p) => `<li>${esc(p.ko)} (${esc(p.en)})</li>`).join(
 const yt = youtube.videos.map((v) => `<li>${esc(v.title)}</li>`).join('')
 const pressList = press.map((p) => `<li>${esc(p.date)} · ${esc(p.outlet)} — <a href="${esc(p.url)}">${esc(p.title)}</a></li>`).join('')
 const researchList = research.map((r) => `<li>${esc(r.date)} · ${esc(r.kind)} — <a href="${esc(r.url)}">${esc(r.title)}</a> (${esc(r.org)})</li>`).join('')
+const papersList = papers.map((p) => `<li>${esc(p.year)} · ${esc(ko(p.role))} — <a href="${esc(p.url)}">${esc(p.title)}</a>. <em>${esc(p.journal)}</em> ${esc(p.vol)}. DOI ${esc(p.doi)}</li>`).join('')
 
 // 사람이 읽는 순서: 정체성 → 전문분야 → 경력 → 시스템 → 강연 → 채널
 const staticHtml = `
@@ -82,6 +84,12 @@ const staticHtml = `
       <section>
         <h2>언론 보도</h2>
         <ul>${pressList}</ul>
+      </section>
+
+      <section>
+        <h2>학술 논문 (Peer-reviewed Publications)</h2>
+        <p>김강훈 — 근골격계 물리치료(요통·복횡근·척추안정화) 국제 학술지 게재 논문. Journal of Physical Therapy Science.</p>
+        <ul>${papersList}</ul>
       </section>
 
       <section>

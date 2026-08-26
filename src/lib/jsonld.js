@@ -95,6 +95,37 @@ export const profilePageLd = {
     '부산 물리치료 교수, 근골격계 물리치료, 부산 허리 치료, 요통 재활, 허리디스크, 부산 AI 전문가, 바이브코딩, 김강훈',
 }
 
+// 학술 논문 JSON-LD (ScholarlyArticle) — 구글학술·AI가 김강훈=이 논문 저자로 인식.
+export const paperLds = [
+  {
+    title: 'Differences in Transversus Abdominis Muscle Function between Chronic Low Back Pain Patients and Healthy Subjects at Maximum Expiration: Measurement with Real-time Ultrasonography',
+    doi: '10.1589/jpts.25.861', year: 2013,
+  },
+  {
+    title: 'Comparison of Contraction Rates of Abdominal Muscles of Chronic Low Back Pain Patients in Different Postures',
+    doi: '10.1589/jpts.25.907', year: 2013,
+  },
+  {
+    title: 'Comparison of Trunk Muscle Activation Ratios with Different Knee Angles during a Bridge Exercise with/without an Abdominal Drawing-in Maneuver',
+    doi: '10.1589/jpts.24.1273', year: 2012,
+  },
+  {
+    title: 'An Analysis of the Thickness of Abdominal Muscles during Forceful Expiration and Pulmonary Function in Teenage Smokers and Nonsmokers',
+    doi: '10.1589/jpts.25.789', year: 2013,
+  },
+].map((p) => ({
+  '@context': 'https://schema.org',
+  '@type': 'ScholarlyArticle',
+  headline: p.title,
+  name: p.title,
+  author: { '@id': 'https://skyman200.github.io/profcook/#person' },
+  datePublished: String(p.year),
+  isPartOf: { '@type': 'Periodical', name: 'Journal of Physical Therapy Science', issn: '0915-5287' },
+  identifier: { '@type': 'PropertyValue', propertyID: 'DOI', value: p.doi },
+  sameAs: `https://doi.org/${p.doi}`,
+  url: `https://doi.org/${p.doi}`,
+}))
+
 // AI가 "이 사람 누구?" 질문에 답할 때 그대로 인용하기 좋은 Q&A 레이어.
 export const faqLd = {
   '@context': 'https://schema.org',
