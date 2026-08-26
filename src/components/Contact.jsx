@@ -28,6 +28,23 @@ export default function Contact({ contact, profile }) {
             {copied ? L(contact.copied) : L(contact.copy)}
           </button>
         </Reveal>
+        {contact.affiliations?.length > 0 && (
+          <Reveal delay={0.2}>
+            <div className="contact__affil">
+              <div className="eyebrow contact__affil-label">{L(contact.affiliationsLabel)}</div>
+              <ul className="contact__affil-list">
+                {contact.affiliations.map((a) => (
+                  <li key={a.url + L(a.name)}>
+                    <a href={a.url} target="_blank" rel="noopener noreferrer me">
+                      <span className="contact__affil-name">{L(a.name)}</span>
+                      <span className="contact__affil-note">{L(a.note)}</span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </Reveal>
+        )}
       </div>
       <div className="foot">
         <div className="wrap foot__row">

@@ -3,10 +3,15 @@ export const profile = {
   nameEn: 'KIM KANG-HOON',
   tagline: 'MOVE BUT BETTER',
   years: '2016 — PRESENT',
-  title: '동의과학대학교 물리치료과 교수·학과장 · AID HUB 센터 팀장',
-  titleEn: 'Professor & Chair, Dept. of Physical Therapy · Team Lead, AID HUB Center · DIT',
+  title: '동의과학대학교 물리치료과 교수·학과장 · 근골격계 물리치료 · AID HUB 센터 팀장',
+  titleEn: 'Professor & Chair, Dept. of Physical Therapy · Musculoskeletal PT · Team Lead, AID HUB Center · DIT (Busan)',
   role: 'Professor of Physical Therapists',
-  era: 'PHYSICAL THERAPY × SYSTEMS',
+  era: 'MUSCULOSKELETAL PT × AI SYSTEMS',
+  location: { ko: '부산 · 동의과학대학교', en: 'Busan · Dong-Eui Institute of Technology' },
+  focus: {
+    ko: '근골격계 물리치료(요통·허리디스크·근막통증) · 교육 AI·자동화 시스템',
+    en: 'Musculoskeletal PT (low-back pain, disc, myofascial pain) · AI & automation systems for education',
+  },
   lab: '본관 410호',
   cover: 'images/cover-portrait.jpg',
   coverDark: 'images/portrait-dark.jpg',
@@ -19,8 +24,8 @@ export const words = {
   intro: {
     headline: 'CAN YOU\nREHABILITATE\nA SYSTEM?',
     body: {
-      ko: '환자의 몸을 재활시키던 물리치료사가, 이번에는 교육의 병목을 재활시키기 시작했다. 채점·실습 기록·성과 관리·문서 — 굳어 있던 흐름을 하나씩 소프트웨어로 풀어냈다. 몸이든 시스템이든, 치료의 원리는 같다: 막힌 곳을 찾아 움직이게 하는 것.',
-      en: 'A physical therapist who rehabilitated bodies began rehabilitating the bottlenecks of education — grading, practicum records, performance management, paperwork — loosening each stiffened workflow with software. Body or system, the principle of treatment is the same: find what is stuck, and make it move.',
+      ko: '부산 동의과학대학교에서 근골격계 물리치료를 가르치는 교수. 요통·허리디스크·디스크성 통증·근막통증을 도수치료와 임상운동학으로 다룬다. 그리고 환자의 몸을 재활시키던 그 손으로, 이번에는 교육의 병목을 재활시킨다 — 채점·실습 기록·성과 관리를 AI와 소프트웨어로. 몸이든 시스템이든, 치료의 원리는 같다: 막힌 곳을 찾아 움직이게 하는 것.',
+      en: 'A professor of musculoskeletal physical therapy at Dong-Eui Institute of Technology in Busan — treating low-back pain, disc pathology, and myofascial pain through manual therapy and clinical kinesiology. And with the same hands that rehabilitated bodies, he now rehabilitates the bottlenecks of education — grading, practicum records, performance management — with AI and software. Body or system, the principle of treatment is the same: find what is stuck, and make it move.',
     },
   },
   grid: [
@@ -181,11 +186,29 @@ export const contact = {
   email: 'cdi3477@dit.ac.kr',
   label: { ko: '강의·자문 문의', en: 'LECTURES & ADVISORY' },
   note: {
-    ko: '실제로 배포한 시스템 12종과 현장 사례로 채우는 AI·교육혁신 강연 — 다음 무대를 문의하세요.',
-    en: 'Lectures on AI-driven education innovation, built on 12 systems actually shipped — book the next stage.',
+    ko: '부산 근골격계 물리치료(요통·허리디스크·근막통증) 교육과, 실제로 배포한 시스템 12종 기반 AI·교육혁신 강연. 강의·자문·협업 — 다음 무대를 문의하세요.',
+    en: 'Musculoskeletal PT education (low-back pain, disc, myofascial pain) and lectures on AI-driven education innovation built on 12 shipped systems — book the next stage.',
   },
   copy: { ko: '이메일 주소 복사', en: 'Copy email address' },
   copied: { ko: '복사됨 ✓', en: 'Copied ✓' },
+  affiliationsLabel: { ko: '소속 · 연계', en: 'AFFILIATIONS' },
+  affiliations: [
+    {
+      name: { ko: '동의과학대학교 물리치료과', en: 'DIT · Dept. of Physical Therapy' },
+      note: { ko: '재직 학과 · 교수·학과장', en: 'Home department · Professor & Chair' },
+      url: 'https://pt.dit.ac.kr/pt/',
+    },
+    {
+      name: { ko: '전문기술석사 · 마이스터대 과정', en: 'Meister Master’s Program (Physical Therapy)' },
+      note: { ko: '스포츠재활 물리치료 전문기술인재 · DNS 현장학습', en: 'Sports-rehab specialist track · DNS practicum' },
+      url: 'https://pt.dit.ac.kr/pt/',
+    },
+    {
+      name: { ko: '동의과학대학교', en: 'Dong-Eui Institute of Technology' },
+      note: { ko: '부산 · 본교', en: 'Busan · Main campus' },
+      url: 'https://www.dit.ac.kr/',
+    },
+  ],
 }
 
 export const youtube = {

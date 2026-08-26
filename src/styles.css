@@ -267,6 +267,14 @@ button { font-family: inherit; }
 .contact__note { color: var(--muted); margin-top: 18px; font-size: 0.98rem; }
 .contact__copy { margin-top: 30px; background: transparent; color: var(--ink); border: 1px solid var(--line); padding: 13px 26px; font-size: 0.9rem; cursor: pointer; transition: border-color 0.3s ease, opacity 0.3s ease; }
 .contact__copy:hover { border-color: var(--muted); }
+.contact__affil { margin: clamp(48px, 8vh, 88px) auto 0; max-width: 720px; }
+.contact__affil-label { color: var(--faint); margin-bottom: 20px; }
+.contact__affil-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+.contact__affil-list a { display: flex; flex-direction: column; gap: 3px; padding: 16px 20px; border: 1px solid var(--line-2); text-decoration: none; color: var(--ink); transition: border-color 0.3s ease, background 0.3s ease; }
+.contact__affil-list a:hover { border-color: var(--line); background: var(--bg-2); }
+.contact__affil-name { font-family: var(--serif); font-weight: 700; font-size: 1.05rem; letter-spacing: 0.01em; }
+.contact__affil-name::after { content: ' \2197'; color: var(--faint); font-family: var(--font); font-weight: 400; }
+.contact__affil-note { color: var(--muted); font-size: 0.86rem; }
 .foot { border-top: 1px solid var(--line-2); padding: 40px 0; margin-top: clamp(70px, 12vh, 140px); }
 .foot__row { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; color: var(--faint); font-size: 0.8rem; }
 .foot__name { font-family: var(--serif); letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); font-weight: 700; }
