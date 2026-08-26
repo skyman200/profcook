@@ -277,6 +277,25 @@ button { font-family: inherit; }
 .contact__affil-note { color: var(--muted); font-size: 0.86rem; }
 
 /* 언론 · 연구 */
+/* 언론 그리드 — 기사 썸네일 카드 */
+.press__grid { margin-top: 30px; display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 24px; }
+.pcard { display: flex; flex-direction: column; text-decoration: none; color: var(--ink); background: var(--bg-2); border: 1px solid var(--line-2); border-radius: 8px; overflow: hidden; transition: transform 0.4s cubic-bezier(.22,1,.36,1), box-shadow 0.4s ease, border-color 0.4s ease; }
+.pcard:hover { transform: translateY(-6px); box-shadow: 0 20px 44px rgba(0,0,0,.5); border-color: rgba(157,183,255,.4); }
+.pcard__thumb { position: relative; aspect-ratio: 16 / 10; overflow: hidden; background: #0c0f16; }
+.pcard__thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s cubic-bezier(.22,1,.36,1); }
+.pcard:hover .pcard__thumb img { transform: scale(1.06); }
+.pcard__tag { position: absolute; top: 10px; left: 10px; font-size: 0.68rem; letter-spacing: 0.03em; color: #fff; background: rgba(12,15,22,.82); backdrop-filter: blur(4px); padding: 4px 10px; border-radius: 999px; }
+.pcard__tag--inline { position: static; display: inline-block; margin: 4px 0 2px; background: var(--bg); border: 1px solid var(--line-2); color: var(--faint); }
+.pcard__body { padding: 16px 16px 18px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+.pcard__meta { display: flex; align-items: center; justify-content: space-between; }
+.pcard__outlet { font-size: 0.8rem; font-weight: 600; color: #9db7ff; }
+.pcard__date { font-family: var(--serif); font-size: 0.78rem; color: var(--faint); }
+.pcard__title { font-size: 0.98rem; line-height: 1.42; font-weight: 500; letter-spacing: -0.01em; flex: 1; }
+.pcard__more { margin-top: 6px; font-size: 0.78rem; color: var(--faint); opacity: 0; transform: translateX(-4px); transition: opacity 0.35s ease, transform 0.35s ease; }
+.pcard:hover .pcard__more { opacity: 1; transform: translateX(0); color: #9db7ff; }
+.pcard--noimg { justify-content: center; }
+@media (max-width: 560px) { .press__grid { grid-template-columns: 1fr; gap: 18px; } }
+
 .press__list { display: grid; gap: 2px; margin-top: 26px; }
 .press__item { display: grid; grid-template-columns: 88px 1fr auto; align-items: center; gap: 18px; padding: 20px 4px; text-decoration: none; color: var(--ink); border-bottom: 1px solid var(--line-2); transition: background 0.3s ease, padding-left 0.3s ease; }
 .press__item:hover { background: var(--bg-2); padding-left: 14px; }
@@ -349,6 +368,11 @@ button { font-family: inherit; }
 .cert:hover .cert__frame { transform: translateY(-6px) scale(1.03); box-shadow: 0 22px 50px rgba(0,0,0,.6); }
 .cert--hl .cert__frame { border-color: rgba(157,183,255,.55); box-shadow: 0 6px 22px rgba(0,0,0,.45), 0 0 0 1px rgba(157,183,255,.3); }
 .cert__seal { position: absolute; top: 9px; right: 9px; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.08em; color: #fff; background: #c0392b; padding: 4px 8px; border-radius: 3px; transform: rotate(6deg); box-shadow: 0 3px 8px rgba(0,0,0,.4); }
+.cert__stamp { position: absolute; bottom: 12px; right: 12px; width: 62px; height: 62px; border-radius: 50%; display: grid; place-items: center; border: 2.5px solid rgba(192,57,43,.85); color: rgba(192,57,43,.9); background: rgba(255,255,255,.06); box-shadow: inset 0 0 0 1.5px rgba(192,57,43,.5); mix-blend-mode: multiply; }
+.cert__stamp--exam { width: 70px; height: 70px; border-color: rgba(41,98,180,.9); color: rgba(41,98,180,.95); box-shadow: inset 0 0 0 1.5px rgba(41,98,180,.55); }
+.cert__stamp-inner { text-align: center; line-height: 1; transform: rotate(4deg); }
+.cert__stamp-inner b { display: block; font-family: var(--serif); font-weight: 800; font-size: 0.92rem; letter-spacing: 0.04em; }
+.cert__stamp-inner i { display: block; margin-top: 3px; font-style: normal; font-size: 0.44rem; font-weight: 700; letter-spacing: 0.14em; }
 .cert__cap { margin-top: 12px; }
 .cert__course { font-family: var(--serif); font-weight: 700; font-size: 0.94rem; line-height: 1.28; letter-spacing: 0.01em; }
 .cert__level { margin-top: 4px; font-size: 0.78rem; color: #9db7ff; }

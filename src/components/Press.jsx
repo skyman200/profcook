@@ -13,19 +13,28 @@ export default function Press({ press, research, meta }) {
         <Reveal delay={0.05}><h2 className="sec-title">{L(meta.pressTitle)}</h2></Reveal>
         <Reveal delay={0.1}><p className="lec__theme">{L(meta.note)}</p></Reveal>
 
-        <div className="press__list">
+        <div className="press__grid">
           {press.map((p, i) => (
-            <motion.a className="press__item" key={p.url + i}
+            <motion.a className={`pcard${p.image ? '' : ' pcard--noimg'}`} key={p.url + i}
               href={p.url} target="_blank" rel="noopener noreferrer"
-              initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-8%' }}
-              transition={{ duration: 0.6, delay: Math.min(i * 0.05, 0.2), ease: EASE }}>
-              <div className="press__date">{p.date}</div>
-              <div className="press__body">
-                <div className="press__title">{p.title}</div>
-                <div className="press__meta"><span className="press__outlet">{p.outlet}</span><span className="press__tag">{p.tag}</span></div>
+              transition={{ duration: 0.6, delay: Math.min(i * 0.06, 0.3), ease: EASE }}>
+              {p.image && (
+                <div className="pcard__thumb">
+                  <img src={p.image} alt={p.title} loading="lazy" />
+                  <span className="pcard__tag">{p.tag}</span>
+                </div>
+              )}
+              <div className="pcard__body">
+                <div className="pcard__meta">
+                  <span className="pcard__outlet">{p.outlet}</span>
+                  <span className="pcard__date">{p.date}</span>
+                </div>
+                <div className="pcard__title">{p.title}</div>
+                {!p.image && <span className="pcard__tag pcard__tag--inline">{p.tag}</span>}
+                <span className="pcard__more">{lang === 'ko' ? '기사 보기' : 'Read'} ↗</span>
               </div>
-              <span className="press__arrow" aria-hidden="true">↗</span>
             </motion.a>
           ))}
         </div>

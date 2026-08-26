@@ -2,18 +2,27 @@ import { motion } from 'framer-motion'
 import Reveal from './Reveal'
 import { useLocale } from '../lib/locale'
 
-// 도장 찍히는 모션 — 크게 시작해 쿵 찍히듯 축소+정착, 살짝 회전
-const stampVariants = {
-  hidden: { opacity: 0, scale: 1.6, rotate: -8 },
+// 카드 프레임 — 아래에서 올라오며 살짝 눌리듯 정착
+const frameVariants = {
+  hidden: { opacity: 0, y: 46, scale: 0.94 },
   show: {
-    opacity: 1, scale: 1, rotate: 0,
-    transition: { type: 'spring', stiffness: 340, damping: 16, mass: 0.9 },
+    opacity: 1, y: 0, scale: 1,
+    transition: { type: 'spring', stiffness: 240, damping: 22, mass: 0.9 },
+  },
+}
+
+// 도장(seal) — 크게 나타나 쿵 찍히듯 축소·회전하며 자리잡음.
+// 부모(.cert)가 hidden→show 트리거하면 자식도 같은 variant 키로 함께 발동된다.
+const stampVariants = {
+  hidden: { opacity: 0, scale: 2.4, rotate: -32 },
+  show: {
+    opacity: 1, scale: 1, rotate: -12,
+    transition: { type: 'spring', stiffness: 420, damping: 12, mass: 1.1, delay: 0.22 },
   },
 }
 
 export default function Certs({ certs, meta }) {
   const { L, lang } = useLocale()
-  // 연도별 그룹 (타임라인 레일)
   const years = [...new Set(certs.map((c) => c.year))].sort()
   const byYear = years.map((y) => ({ year: y, items: certs.filter((c) => c.year === y) }))
 
@@ -37,24 +46,35 @@ export default function Certs({ certs, meta }) {
         <div className="certs__rail">
           {byYear.map((grp) => (
             <div className="certs__yeargroup" key={grp.year}>
-              <div className="certs__yearmark"><span>{grp.year}</span></div>
+              <motion.div className="certs__yearmark"
+                initial={{ opacity: 0, x: -16 }} whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: '-15%' }} transition={{ duration: 0.5 }}>
+                <span>{grp.year}</span>
+              </motion.div>
               <div className="certs__cards">
                 {grp.items.map((c) => (
                   <motion.a
                     className={`cert${c.highlight ? ' cert--hl' : ''}`} key={c.id}
                     href={c.image} target="_blank" rel="noopener noreferrer"
-                    variants={stampVariants} initial="hidden" whileInView="show"
-                    viewport={{ once: true, margin: '-12%' }}
+                    initial="hidden" whileInView="show"
+                    viewport={{ once: true, margin: '-14%' }}
                   >
-                    <div className="cert__frame">
+                    <motion.div className="cert__frame" variants={frameVariants}>
                       <img src={c.image} alt={`${c.course} — Rehabilitation Prague School`} loading="lazy" />
-                      {c.type === 'Achievement' && <span className="cert__seal">✓ EXAM</span>}
-                    </div>
-                    <div className="cert__cap">
+                      {/* 스크롤 진입 시 하나씩 쿵 찍히는 인증 도장 */}
+                      <motion.span className={`cert__stamp${c.type === 'Achievement' ? ' cert__stamp--exam' : ''}`}
+                        variants={stampVariants} aria-hidden="true">
+                        <span className="cert__stamp-inner">
+                          <b>DNS</b>
+                          <i>{c.type === 'Achievement' ? 'PASSED' : 'CERTIFIED'}</i>
+                        </span>
+                      </motion.span>
+                    </motion.div>
+                    <motion.div className="cert__cap" variants={frameVariants}>
                       <div className="cert__course">{c.course}</div>
                       <div className="cert__level">{L(c.level)}{c.hours ? ` · ${c.hours}h` : ''}</div>
                       <div className="cert__date">{c.dateFull}</div>
-                    </div>
+                    </motion.div>
                   </motion.a>
                 ))}
               </div>

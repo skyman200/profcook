@@ -8,6 +8,7 @@ export const press = [
     outlet: '아시아경제',
     title: '반복 행정 끝, AI로 바꾼다… 동의과학대 김강훈 교수, 전국 전문대 사무국장단 특강',
     url: 'https://n.news.naver.com/mnews/article/277/0005794931',
+    image: 'images/press/press1.jpg',
     tag: 'AI·교육혁신',
   },
   {
@@ -15,6 +16,7 @@ export const press = [
     outlet: '부산일보',
     title: '동의과학대 김강훈 교수, 전문대학 법인 관계자 대상 AI 활용 특강 성료',
     url: 'https://www.busan.com/view/busan/view.php?code=2026072714261938187',
+    image: 'images/press/press2.jpg',
     tag: 'AI·교육혁신',
   },
   {
@@ -22,6 +24,7 @@ export const press = [
     outlet: '부산일보',
     title: '동의과학대 물리치료과, 제주오름트레일러닝서 피지오부스 운영',
     url: 'https://www.busan.com/view/busan/view.php?code=2026062214192599708',
+    image: 'images/press/press3.jpg',
     tag: '스포츠재활',
   },
   {
@@ -29,6 +32,7 @@ export const press = [
     outlet: '중도일보',
     title: '동의과학대 물리치료과, 의료현장 맞춤형 인재 양성 강화',
     url: 'https://www.joongdo.co.kr/web/view.php?key=20260618010005213',
+    image: 'images/press/press4.jpg',
     tag: '교육',
   },
   {
@@ -36,6 +40,7 @@ export const press = [
     outlet: '스포츠동아',
     title: '“산길 달리는 러너들의 든든한 버팀목” 동의과학대 물리치료과 스포츠재활 지원',
     url: 'https://n.news.naver.com/mnews/article/382/0001272171',
+    image: 'images/press/press5.jpg',
     tag: '스포츠재활',
   },
   {
@@ -43,6 +48,7 @@ export const press = [
     outlet: '부산일보',
     title: '동의과학대 물리치료과, ‘코리아 50K’서 스포츠 재활 지원',
     url: 'https://n.news.naver.com/mnews/article/082/0001379582',
+    image: 'images/press/press6.jpg',
     tag: '스포츠재활',
   },
   {
@@ -50,6 +56,7 @@ export const press = [
     outlet: '아시아경제',
     title: '동의과학대 마이스터 석사과정, ‘취업 넘어 창업’ 성과로 이어져',
     url: 'https://n.news.naver.com/mnews/article/277/0005716115',
+    image: 'images/press/press7.jpg',
     tag: '전문기술석사',
   },
   {
@@ -57,6 +64,7 @@ export const press = [
     outlet: '머니투데이',
     title: '동의과학대 마이스터 석사생들 ‘줄줄이 창업’…비결은?',
     url: 'https://n.news.naver.com/mnews/article/008/0005313324',
+    image: 'images/press/press8.jpg',
     tag: '전문기술석사',
   },
   {
