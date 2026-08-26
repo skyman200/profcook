@@ -167,18 +167,13 @@ export const instagram = {
     en: '#DIT #PhysicalTherapy #Professor · #PyeongChang #MedicalStaff · #Pilates — aiming to become Korea’s “Kim Cook,” after Gray Cook.',
   },
   items: [
-    { sc: 'Dalxc-JzfQa', img: 'images/insta/Dalxc-JzfQa.jpg', cap: 'AX는 누가 잘할까?', kind: 'IMG' },
-    { sc: 'DakIoSPtStC', img: 'images/insta/DakIoSPtStC.jpg', cap: '대전 강의 · AI로 라이브까지', kind: 'VID' },
     { sc: 'DaUzEWEBf80', img: 'images/insta/DaUzEWEBf80.jpg', cap: 'AI 김덕진 교수님 특강 · 많이 써 본 사람이 장땡', kind: 'IMG' },
-    { sc: 'DaCphgBhFr3', img: 'images/insta/DaCphgBhFr3.jpg', cap: '가재코드 · Made in Korea', kind: 'VID' },
-    { sc: 'DZ49BL0NHDi', img: 'images/insta/DZ49BL0NHDi.jpg', cap: '실습일지에 디스코드 연동', kind: 'IMG' },
-    { sc: 'DZotMugTDGg', img: 'images/insta/DZotMugTDGg.jpg', cap: '바이브코딩 일주일 딸깍', kind: 'VID' },
+    { sc: 'DakIoSPtStC', img: 'images/insta/DakIoSPtStC.jpg', cap: '대전 강의 · AI로 라이브까지', kind: 'VID' },
     { sc: 'DZlvXUJMXDR', img: 'images/insta/DZlvXUJMXDR.jpg', cap: '학교에서 배운 걸 현장에서', kind: 'VID' },
-    { sc: 'DZgbVcfOtYP', img: 'images/insta/DZgbVcfOtYP.jpg', cap: '본캐 · 살로몬 트레일러닝 테이핑', kind: 'VID' },
-    { sc: 'DZcpl2LhwGs', img: 'images/insta/DZcpl2LhwGs.jpg', cap: '물리치료과 교수가 맞는지?', kind: 'IMG' },
-    { sc: 'DY5yRFNF9cE', img: 'images/insta/DY5yRFNF9cE.jpg', cap: '재활 · 소비자 중심으로', kind: 'VID' },
-    { sc: 'DY4B_4eOsk9', img: 'images/insta/DY4B_4eOsk9.jpg', cap: '물리치료과 축구대회 우승', kind: 'VID' },
-    { sc: 'DYe3tRNGPbC', img: 'images/insta/DYe3tRNGPbC.jpg', cap: '물리치료과 바이브코딩 경진대회', kind: 'IMG' },
+    { sc: 'DXoE_9Jk69z', img: 'images/insta/DXoE_9Jk69z.jpg', cap: '살로몬 트레일러닝 · 피지오부스 봉사활동', kind: 'VID' },
+    { sc: 'DXi8ehQEy6w', img: 'images/insta/DXi8ehQEy6w.jpg', cap: '트레일러닝 현장 · 근골격계 테이핑', kind: 'VID' },
+    { sc: 'DWXrpBWCVPa', img: 'images/insta/DWXrpBWCVPa.jpg', cap: '학생들에게 도수치료(manual) 실습 지도', kind: 'VID' },
+    { sc: 'DUGNaxAk6Y9', img: 'images/insta/DUGNaxAk6Y9.jpg', cap: '근골격계 물리치료 · 초청 특강', kind: 'IMG' },
   ],
 }
 
