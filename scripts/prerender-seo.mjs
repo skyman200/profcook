@@ -20,6 +20,7 @@ const {
   instagram, youtube, ledger, contact, bio,
 } = await import(resolve(root, 'src/data/content.js'))
 const { projects, systems, chapters } = await import(resolve(root, 'src/data/projects.js'))
+const { press, research } = await import(resolve(root, 'src/data/press.js'))
 
 const esc = (s = '') =>
   String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
@@ -34,6 +35,8 @@ const tl = timeline.events.map((e) => `<li>${esc(String(e.date))} — ${esc(ko(e
 const lec = lectures.map((l) => `<li>${esc(ko(l.period))} · ${esc(ko(l.host))} · ${esc(ko(l.kind))}</li>`).join('')
 const prin = principles.map((p) => `<li>${esc(p.ko)} (${esc(p.en)})</li>`).join('')
 const yt = youtube.videos.map((v) => `<li>${esc(v.title)}</li>`).join('')
+const pressList = press.map((p) => `<li>${esc(p.date)} · ${esc(p.outlet)} — <a href="${esc(p.url)}">${esc(p.title)}</a></li>`).join('')
+const researchList = research.map((r) => `<li>${esc(r.date)} · ${esc(r.kind)} — <a href="${esc(r.url)}">${esc(r.title)}</a> (${esc(r.org)})</li>`).join('')
 
 // 사람이 읽는 순서: 정체성 → 전문분야 → 경력 → 시스템 → 강연 → 채널
 const staticHtml = `
@@ -74,6 +77,16 @@ const staticHtml = `
       <section>
         <h2>초청 강연 — ${esc(ko(lecturesTheme))}</h2>
         <ul>${lec}</ul>
+      </section>
+
+      <section>
+        <h2>언론 보도</h2>
+        <ul>${pressList}</ul>
+      </section>
+
+      <section>
+        <h2>연구 · 학술 활동</h2>
+        <ul>${researchList}</ul>
       </section>
 
       <section>
