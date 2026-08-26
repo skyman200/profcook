@@ -361,7 +361,7 @@ button { font-family: inherit; }
 .certs__yearmark { position: relative; margin: 0 0 22px -30px; display: flex; align-items: center; gap: 14px; }
 .certs__yearmark::before { content: ''; width: 13px; height: 13px; border-radius: 50%; background: var(--bg); border: 2px solid #9db7ff; box-shadow: 0 0 0 4px var(--bg), 0 0 16px rgba(157,183,255,.5); flex: 0 0 auto; }
 .certs__yearmark span { font-family: var(--serif); font-weight: 700; font-size: clamp(1.3rem, 3vw, 1.9rem); letter-spacing: 0.02em; color: var(--ink); }
-.certs__cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(178px, 1fr)); gap: 22px; }
+.certs__cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 28px; }
 .cert { text-decoration: none; color: var(--ink); display: block; }
 .cert__frame { position: relative; border-radius: 4px; overflow: hidden; background: #fff; box-shadow: 0 6px 22px rgba(0,0,0,.45); border: 1px solid rgba(236,241,250,.1); transition: transform 0.45s cubic-bezier(.22,1,.36,1), box-shadow 0.45s ease; }
 .cert__frame img { display: block; width: 100%; aspect-ratio: 900 / 1273; object-fit: cover; object-position: top center; }
@@ -378,7 +378,8 @@ button { font-family: inherit; }
 .cert__course { font-family: var(--serif); font-weight: 700; font-size: 0.94rem; line-height: 1.28; letter-spacing: 0.01em; }
 .cert__level { margin-top: 4px; font-size: 0.78rem; color: #9db7ff; }
 .cert__date { margin-top: 3px; font-size: 0.74rem; color: var(--faint); }
-@media (max-width: 560px) { .certs__cards { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 16px; } .certs__rail { padding-left: 22px; } .certs__yearmark { margin-left: -22px; } }
+@media (min-width: 900px) { .certs__cards { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 560px) { .certs__cards { grid-template-columns: 1fr 1fr; gap: 16px; } .certs__rail { padding-left: 22px; } .certs__yearmark { margin-left: -22px; } }
 .foot { border-top: 1px solid var(--line-2); padding: 40px 0; margin-top: clamp(70px, 12vh, 140px); }
 .foot__row { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; color: var(--faint); font-size: 0.8rem; }
 .foot__name { font-family: var(--serif); letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); font-weight: 700; }

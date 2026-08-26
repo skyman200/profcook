@@ -2,35 +2,22 @@ import { motion } from 'framer-motion'
 import Reveal from './Reveal'
 import { useLocale } from '../lib/locale'
 
-// 카드 컨테이너 — 자식(프레임/도장/캡션)을 순차로 등장시키는 stagger 오케스트레이터
+// 인증서 카드 — 각 카드가 자기 스크롤 위치에서 개별 발동(whileInView).
+// 카드의 55%가 보여야 켜지므로, 스크롤에 따라 카드가 하나씩 올라오고 그때 도장이 찍힌다.
 const cardVariants = {
-  hidden: {},
-  show: { transition: { staggerChildren: 0.14, delayChildren: 0.05 } },
+  hidden: { opacity: 0, y: 54 },
+  show: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 260, damping: 24, mass: 0.9 } },
 }
 
-// 인증서 프레임 — 아래에서 올라오며 살짝 눌리듯 정착
-const frameVariants = {
-  hidden: { opacity: 0, y: 48, scale: 0.92 },
-  show: {
-    opacity: 1, y: 0, scale: 1,
-    transition: { type: 'spring', stiffness: 240, damping: 22, mass: 0.9 },
-  },
-}
-
-// 캡션 — 프레임 뒤에 뒤따라
-const capVariants = {
-  hidden: { opacity: 0, y: 12 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.4, ease: [0.22, 1, 0.36, 1] } },
-}
-
-// 도장 — 카드가 자리잡은 뒤, 멀리서(아주 크게+위에서) 날아와 쿵 찍힘
-const stampVariants = {
-  hidden: { opacity: 0, scale: 5, rotate: -45, y: -60 },
+// 도장 — 카드가 자리잡은 뒤 멀리서(크게+위에서) 날아와 쿵 찍힘.
+// 같은 행이 동시에 보여도 열 인덱스만큼 delay를 더해 왼→오 순서로 하나씩 찍힌다.
+const makeStamp = (i) => ({
+  hidden: { opacity: 0, scale: 3.6, rotate: -42, y: -54 },
   show: {
     opacity: 1, scale: 1, rotate: -12, y: 0,
-    transition: { type: 'spring', stiffness: 520, damping: 15, mass: 1.4, delay: 0.34 },
+    transition: { type: 'spring', stiffness: 520, damping: 15, mass: 1.4, delay: 0.3 + i * 0.42 },
   },
-}
+})
 
 export default function Certs({ certs, meta }) {
   const { L, lang } = useLocale()
@@ -62,32 +49,33 @@ export default function Certs({ certs, meta }) {
                 viewport={{ once: true, margin: '-15%' }} transition={{ duration: 0.5 }}>
                 <span>{grp.year}</span>
               </motion.div>
+
+              {/* 각 카드가 자기 스크롤 위치에서 개별 발동 → 스크롤에 따라 하나씩 등장 */}
               <div className="certs__cards">
-                {grp.items.map((c) => (
+                {grp.items.map((c, ci) => (
                   <motion.a
                     className={`cert${c.highlight ? ' cert--hl' : ''}`} key={c.id}
                     href={c.image} target="_blank" rel="noopener noreferrer"
                     variants={cardVariants} initial="hidden" whileInView="show"
-                    viewport={{ once: true, amount: 0.5 }}
-                  >
+                    viewport={{ once: true, amount: 0.55 }}>
                     <div className="cert__stage">
-                      <motion.div className="cert__frame" variants={frameVariants}>
+                      <div className="cert__frame">
                         <img src={c.image} alt={`${c.course} — Rehabilitation Prague School`} loading="lazy" />
-                      </motion.div>
-                      {/* 도장은 프레임 밖(clip 없음)에서 멀리서 날아와 인증서 위에 쿵 */}
+                      </div>
+                      {/* 도장은 프레임 밖(clip 없음) stage 안에서 멀리서 날아와 쿵 */}
                       <motion.span className={`cert__stamp${c.type === 'Achievement' ? ' cert__stamp--exam' : ''}`}
-                        variants={stampVariants} aria-hidden="true">
+                        variants={makeStamp(ci % 3)} aria-hidden="true">
                         <span className="cert__stamp-inner">
                           <b>DNS</b>
                           <i>{c.type === 'Achievement' ? 'PASSED' : 'CERTIFIED'}</i>
                         </span>
                       </motion.span>
                     </div>
-                    <motion.div className="cert__cap" variants={capVariants}>
+                    <div className="cert__cap">
                       <div className="cert__course">{c.course}</div>
                       <div className="cert__level">{L(c.level)}{c.hours ? ` · ${c.hours}h` : ''}</div>
                       <div className="cert__date">{c.dateFull}</div>
-                    </motion.div>
+                    </div>
                   </motion.a>
                 ))}
               </div>
