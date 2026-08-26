@@ -9,25 +9,27 @@ import { useLocale } from '../lib/locale'
 function Cert({ c, L, col, cols }) {
   const ref = useRef(null)
   // 카드가 화면 하단→상단으로 지나가는 구간을 0→1로 정규화.
+  // 3배 더 천천히: 카드가 뷰포트를 지나는 진행 구간을 약 3배로 늘린다.
+  // 시작점을 화면 하단보다 훨씬 아래(2.6)로 잡으면 같은 스크롤 양에도 진행도가 천천히 오른다.
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ['start 0.92', 'start 0.12'],
+    offset: ['start 3.2', 'start 0.05'],
   })
 
   // 같은 줄 카드는 진행도가 같으므로, 열 위치(col)만큼 발동 구간을 뒤로 밀어
   // 왼→오로 1→2→3 순차 등장·날인되게 한다. 한 줄을 (cols+1) 슬롯으로 나눈다.
   const span = 1 / (cols + 1)
   const s = col * span
-  // 카드 등장: s ~ s+0.6*span
-  const cardY = useTransform(scrollYProgress, [s, s + span * 0.6], [64, 0])
-  const cardOpacity = useTransform(scrollYProgress, [s, s + span * 0.4], [0, 1])
-  // 도장 날인: 카드 등장 직후(d0) ~ 다음 슬롯 전(d1). 멀리서 크게 흐릿 → 작고 선명
+  // 카드 등장: 슬롯 전반(s ~ s+0.45*span)에 천천히 올라온다
+  const cardY = useTransform(scrollYProgress, [s, s + span * 0.45], [64, 0])
+  const cardOpacity = useTransform(scrollYProgress, [s, s + span * 0.3], [0, 1])
+  // 도장 날인: 카드 등장 뒤(d0) ~ 슬롯 끝(d1)까지 넓게 퍼져 천천히 다가온다
   const d0 = s + span * 0.5
-  const d1 = s + span * 1.2
-  const stampScale = useTransform(scrollYProgress, [d0, d0 + (d1 - d0) * 0.7, d1], [4.4, 1.12, 1])
+  const d1 = s + span * 1.5
+  const stampScale = useTransform(scrollYProgress, [d0, d0 + (d1 - d0) * 0.75, d1], [4.4, 1.12, 1])
   const stampBlurN = useTransform(scrollYProgress, [d0, d1], [12, 0])
   const stampBlur = useMotionTemplate`blur(${stampBlurN}px)`
-  const stampOpacity = useTransform(scrollYProgress, [d0, d0 + (d1 - d0) * 0.35], [0, 1])
+  const stampOpacity = useTransform(scrollYProgress, [d0, d0 + (d1 - d0) * 0.3], [0, 1])
   const stampRotate = useTransform(scrollYProgress, [d0, d1], [-30, -12])
 
   return (
