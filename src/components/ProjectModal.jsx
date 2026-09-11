@@ -49,7 +49,7 @@ export default function ProjectModal({ project, onClose }) {
             initial={{ opacity: 0, y: 30, scale: 0.98 }} animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.98 }} transition={{ duration: 0.42, ease: EASE }}>
             <button className="modal__close" onClick={onClose} aria-label={lang === 'ko' ? '닫기' : 'Close'} ref={closeRef}>✕</button>
-            <figure className="modal__figure"><img src={project.image} alt={project.title} /></figure>
+            <figure className={`modal__figure${project.fit === 'contain' ? ' modal__figure--contain' : ''}`}><img src={project.image} alt={project.title} /></figure>
             <div className="modal__body">
               <div className="modal__domain">{lang === 'ko' ? `${domains[project.domain].ko} · ${project.domain}` : domains[project.domain].en}</div>
               <h3 className="modal__title">{project.title}</h3>

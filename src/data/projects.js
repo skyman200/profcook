@@ -10,7 +10,7 @@ export const domains = {
 export const projects = [
   {
     id: 'ditai4', title: '강의계획서 AI 체크', en: 'Syllabus AI Adoption', domain: 'CLASSROOM',
-    url: 'https://dit-ai4-check.pages.dev/', image: 'images/apps/ditai4.jpg',
+    url: 'https://dit-ai4-check.pages.dev/', image: 'images/apps/ditai4.jpg', fit: 'contain',
     video: 'https://youtu.be/YFMw3N09j5w',
     desc: {
       ko: '동의과학대 AID 사업 전 학과의 강의계획서 AI 4주 적용을 클릭 한 번으로 확인·확정하는 온라인 체크 시스템. 37개 학과·전 과목의 실측 판정을 보여주고, 과목마다 개선안 적용·주차 선택·직접 편집 3가지 방법 중 하나를 고르면 확정 PDF가 구글드라이브에 자동 저장된다.',
