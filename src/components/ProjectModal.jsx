@@ -61,11 +61,19 @@ export default function ProjectModal({ project, onClose }) {
               <div className="modal__tags">
                 {project.stack.map((s) => <span key={s}>{s}</span>)}
               </div>
-              {project.url && (
-                <a className="modal__open" href={project.url} target="_blank" rel="noopener noreferrer">
-                  {lang === 'ko' ? '앱 열기 →' : 'Open app →'}
-                </a>
-              )}
+              <div className="modal__actions">
+                {project.url && (
+                  <a className="modal__open" href={project.url} target="_blank" rel="noopener noreferrer">
+                    {lang === 'ko' ? '앱 열기 →' : 'Open app →'}
+                  </a>
+                )}
+                {project.video && (
+                  <a className="modal__video" href={project.video} target="_blank" rel="noopener noreferrer">
+                    <span className="modal__video-play" aria-hidden="true" />
+                    {lang === 'ko' ? '사용법 영상' : 'Walkthrough'}
+                  </a>
+                )}
+              </div>
             </div>
           </motion.div>
         </motion.div>

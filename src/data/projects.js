@@ -9,6 +9,22 @@ export const domains = {
 
 export const projects = [
   {
+    id: 'ditai4', title: '강의계획서 AI 체크', en: 'Syllabus AI Adoption', domain: 'CLASSROOM',
+    url: 'https://dit-ai4-check.pages.dev/', image: 'images/apps/ditai4.jpg',
+    video: 'https://youtu.be/YFMw3N09j5w',
+    desc: {
+      ko: '동의과학대 AID 사업 전 학과의 강의계획서 AI 4주 적용을 클릭 한 번으로 확인·확정하는 온라인 체크 시스템. 37개 학과·전 과목의 실측 판정을 보여주고, 과목마다 개선안 적용·주차 선택·직접 편집 3가지 방법 중 하나를 고르면 확정 PDF가 구글드라이브에 자동 저장된다.',
+      en: 'An online checklist that lets every department in DIT’s AID program confirm and finalize the “4-week AI adoption” of its syllabi in one click. It surfaces measured verdicts across 37 departments and all subjects; for each subject you pick one of three methods — apply the improved draft, choose weeks, or edit it yourself — and a finalized PDF is auto-saved to Google Drive.',
+    },
+    points: [
+      { ko: '37개 학과 · 전 과목 실측 판정(적용완료 / 수정 N)', en: '37 depts · measured verdict per subject (done / N to fix)' },
+      { ko: '과목별 3가지 방법: 개선안 적용 · 주차 선택 · 직접 편집', en: 'Three methods per subject: improved draft · week-picker · self-edit' },
+      { ko: '원본 vs AI 적용안 나란히 비교 · 확정 PDF 자동 저장', en: 'Side-by-side original vs AI draft · auto-saved finalized PDF' },
+      { ko: '강사 각자 제출 · 재제출 시 최신본만 결과 폴더에 유지', en: 'Per-instructor submit · only the latest resubmission is kept' },
+    ],
+    stack: ['Web', 'Apps Script', 'Google Drive', 'PDF'],
+  },
+  {
     id: 'ptsmart', title: 'PT SMART', en: 'Clinical Practicum OS', domain: 'CLINIC',
     url: null, image: 'images/apps/ptsmart.jpg',
     desc: {
@@ -109,6 +125,7 @@ export const projects = [
 // 화면(UI)이 없는 인프라·데이터 작업 — 이미지 대신 정직하게 텍스트로
 export const systems = [
   { name: 'AID 성과관리', en: 'Performance Mgmt', note: { ko: '동의과학대 성과관리 · Supabase · echarts · HWPX 내보내기', en: 'DIT performance management · Supabase · echarts · HWPX export' } },
+  { name: '강의계획서 AI 확정 파이프라인', en: 'Syllabus PDF Pipeline', note: { ko: '과목별 확정 PDF 병렬 생성 · 구글드라이브 자동 저장 · 배지 발급 연계', en: 'Parallel per-subject PDF build · auto-save to Drive · badge issuance' } },
   { name: '방문재활 설문 AI', en: 'Field Survey AI', note: { ko: '하이브리드 AI 분석 · PDF · DOCX · HWPX 리포트', en: 'Hybrid AI analysis · PDF · DOCX · HWPX reports' } },
   { name: '부산 필라테스 전수조사', en: 'Census & Scoring', note: { ko: '네이버 데이터 전수조사 · PT 스코어 정량화', en: 'Full census of Naver data · quantified PT scoring' } },
   { name: 'Regime Sentinel', en: 'Market Regime', note: { ko: 'FRED · Toss 데이터 · 규칙 감사형 대시보드', en: 'FRED · Toss data · rule-audited dashboard' } },

@@ -43,8 +43,8 @@ export const words = {
       word: 'CODE',
       icon: 'code',
       body: {
-        ko: '채점, 실습 기록, 성과 관리, 문서. 교육의 병목마다 소프트웨어를 세웠다. PT SMART, physioCBT, AID 성과관리 — 강의실 밖의 노동을 코드가 대신하게 했다. 손이 비자, 시간이 학생에게 돌아갔다.',
-        en: 'Grading, practicum logs, performance management, documents. At every bottleneck of education he raised software. PT SMART, physioCBT, the AID performance system — code took over the labor outside the classroom. As his hands emptied, time returned to the students.',
+        ko: '채점, 실습 기록, 성과 관리, 문서. 교육의 병목마다 소프트웨어를 세웠다. PT SMART, physioCBT, AID 성과관리, 그리고 37개 학과의 강의계획서 AI 적용을 클릭 한 번으로 끝내는 ‘강의계획서 AI 체크’ — 강의실 밖의 노동을 코드가 대신하게 했다. 손이 비자, 시간이 학생에게 돌아갔다.',
+        en: 'Grading, practicum logs, performance management, documents. At every bottleneck of education he raised software. PT SMART, physioCBT, the AID performance system, and a syllabus AI checker that finalizes 37 departments’ plans in one click — code took over the labor outside the classroom. As his hands emptied, time returned to the students.',
       },
     },
     {
@@ -98,6 +98,7 @@ export const timeline = {
     { date: 2026.35, label: { ko: '한국전문대교육협의회 초청 강연', en: 'Invited lecture · KCCE' }, row: 2 },
     { date: 2026.42, label: { ko: '동의과학대 AID HUB 센터 팀장', en: 'Team Lead, DIT AID HUB Center' } },
     { date: 2026.5, label: { ko: '교수학습개발센터 · 법인협의회 강연', en: 'Lectures · CTL & KAPCF' }, row: 2 },
+    { date: 2026.68, label: { ko: '강의계획서 AI 체크 배포 · 37개 학과', en: 'Syllabus AI checker ships · 37 depts' } },
   ],
   // projectId → src/data/projects.js 의 projects[].id
   works: [
@@ -108,6 +109,7 @@ export const timeline = {
     { date: 2026.33, projectId: 'torun', year: '2026' },
     { date: 2026.42, projectId: 'romfit', year: '2026' },
     { date: 2026.5, projectId: 'physio', year: '2026' },
+    { date: 2026.68, projectId: 'ditai4', year: '2026' },
   ],
   trend: [
     [2015.6, 1], [2016.15, 7], [2016.6, 3], [2017.2, 4], [2017.7, 3],
@@ -181,8 +183,8 @@ export const contact = {
   email: 'cdi3477@dit.ac.kr',
   label: { ko: '강의·자문 문의', en: 'LECTURES & ADVISORY' },
   note: {
-    ko: '부산 근골격계 물리치료(요통·허리디스크·근막통증) 교육과, 실제로 배포한 시스템 12종 기반 AI·교육혁신 강연. 강의·자문·협업 — 다음 무대를 문의하세요.',
-    en: 'Musculoskeletal PT education (low-back pain, disc, myofascial pain) and lectures on AI-driven education innovation built on 12 shipped systems — book the next stage.',
+    ko: '부산 근골격계 물리치료(요통·허리디스크·근막통증) 교육과, 실제로 배포한 시스템 14종 기반 AI·교육혁신 강연. 강의·자문·협업 — 다음 무대를 문의하세요.',
+    en: 'Musculoskeletal PT education (low-back pain, disc, myofascial pain) and lectures on AI-driven education innovation built on 14 shipped systems — book the next stage.',
   },
   copy: { ko: '이메일 주소 복사', en: 'Copy email address' },
   copied: { ko: '복사됨 ✓', en: 'Copied ✓' },
@@ -226,12 +228,12 @@ export const youtube = {
 // hirst의 Biological Specimen Ledger 포맷 — 세리프 표본명 + 부제 + 대형 숫자 + 단위.
 export const ledger = {
   title: 'Systems Ledger',
-  total: { count: 12, label: { ko: '시스템 총합', en: 'systems in total' } },
+  total: { count: 14, label: { ko: '시스템 총합', en: 'systems in total' } },
   asOf: { ko: '기준 · 2026.07', en: 'As of · 2026.07' },
   specimens: [
     { name: 'Olympic Games', sub: { ko: '평창 동계올림픽 의무요원', en: 'PyeongChang Winter Olympics medical staff' }, count: 1, unit: { ko: '대회', en: 'games' } },
     { name: 'Years in Movement', sub: { ko: '임상 · 현장 · 강단', en: 'Clinic · field · classroom' }, count: 20, unit: { ko: '년 +', en: 'yrs +' } },
-    { name: 'Systems Shipped', sub: { ko: '웹앱 7종 + 자동화 파이프라인 5건', en: '7 web apps + 5 automation pipelines' }, count: 12, unit: { ko: '종', en: 'systems' } },
+    { name: 'Systems Shipped', sub: { ko: '웹앱 8종 + 자동화 파이프라인 6건', en: '8 web apps + 6 automation pipelines' }, count: 14, unit: { ko: '종', en: 'systems' } },
     { name: 'Invited Lectures', sub: { ko: '2026 한 시즌에만', en: 'In a single season, 2026' }, count: 3, unit: { ko: '회', en: 'talks' } },
     { name: 'Clinical Films', sub: { ko: '유튜브 피티로그 임상 강의', en: 'PT Log clinical lectures on air' }, count: 5, unit: { ko: '편', en: 'films' } },
     { name: 'Community', sub: { ko: '게시물 812 · 인스타그램 팔로워', en: '812 posts · Instagram followers' }, count: 1215, unit: { ko: '명', en: 'people' } },
