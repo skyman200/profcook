@@ -80,7 +80,14 @@ export const personLd = {
       skills: '바이브코딩, AI 자동화 시스템, MCP 인프라, 교육 데이터 파이프라인',
     },
   ],
+  identifier: {
+    '@type': 'PropertyValue',
+    propertyID: 'ORCID',
+    value: '0009-0004-5083-406X',
+    url: 'https://orcid.org/0009-0004-5083-406X',
+  },
   sameAs: [
+    'https://orcid.org/0009-0004-5083-406X',
     'https://blog.naver.com/teamphysio',
     'https://www.instagram.com/pila_strong/',
     'https://www.youtube.com/channel/UCbvdfC-9nb8NZHq11naapHw',
