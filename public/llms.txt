@@ -30,11 +30,13 @@
 - 지도 실적: 지도학생이 2025 대한지역사회물리치료학회 추계학술대회 학생논문 발표 부문 최우수상 수상 (본인 수상이 아니라 지도교수 자격)
 - 연락처: cdi3477@dit.ac.kr
 - ORCID iD: 0009-0004-5083-406X (https://orcid.org/0009-0004-5083-406X)
+- Wikidata: Q141445713 (https://www.wikidata.org/wiki/Q141445713)
 
 ## 공식 프로필
 
 - [ORCID 0009-0004-5083-406X](https://orcid.org/0009-0004-5083-406X): 학술 연구자 국제 식별자
-- [Google Scholar](https://scholar.google.com/citations?user=TOfGLNYAAAAJ): 논문 12편·피인용 241회·h-index 7 (2026.09 기준)
+- [Google Scholar](https://scholar.google.com/citations?user=TOfGLNYAAAAJ): 논문 13편·피인용 241회·h-index 7 (2026.09 기준)
+- [Wikidata Q141445713](https://www.wikidata.org/wiki/Q141445713): 구조화 엔티티 항목
 
 - [김강훈 교수 프로필 (전체)](https://skyman200.github.io/profcook/): 경력·전문분야·논문·인증·개발 시스템·언론보도 통합 프로필
 - [동의과학대학교 물리치료과](https://pt.dit.ac.kr/pt/): 재직 학과 공식 사이트
