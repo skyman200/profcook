@@ -23,6 +23,7 @@ const { projects, systems, chapters } = await import(resolve(root, 'src/data/pro
 const { press, research } = await import(resolve(root, 'src/data/press.js'))
 const { papersIntl, papersKor } = await import(resolve(root, 'src/data/papers.js'))
 const { certs, certsMeta } = await import(resolve(root, 'src/data/certs.js'))
+const { faqLd } = await import(resolve(root, 'src/lib/jsonld.js'))
 
 const esc = (s = '') =>
   String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
@@ -41,6 +42,9 @@ const pressList = press.map((p) => `<li>${esc(p.date)} · ${esc(p.outlet)} — <
 const researchList = research.map((r) => `<li>${esc(r.date)} · ${esc(r.kind)} — <a href="${esc(r.url)}">${esc(r.title)}</a> (${esc(r.org)})</li>`).join('')
 const papersIntlList = papersIntl.map((p) => `<li>${esc(p.year)} · ${esc(ko(p.role))} — <a href="${esc(p.url)}">${esc(p.title)}</a>. <em>${esc(p.journal)}</em> ${esc(p.vol)}. DOI ${esc(p.doi)}</li>`).join('')
 const papersKorList = papersKor.map((p) => `<li>${esc(p.year)} · ${esc(ko(p.role))} — <a href="${esc(p.url)}">${esc(p.titleKo)}</a> (${esc(p.titleEn)}). <em>${esc(p.journal)}</em> ${esc(p.vol)}${p.doi ? `. DOI ${esc(p.doi)}` : ''}</li>`).join('')
+const faqList = faqLd.mainEntity
+  .map((q) => `<section><h3>${esc(q.name)}</h3><p>${esc(q.acceptedAnswer.text)}</p></section>`)
+  .join('')
 const certsList = certs.map((c) => `<li>${esc(c.date)} — <strong>${esc(c.course)}</strong> (${esc(ko(c.level))}), ${esc(certsMeta.issuer)}${c.hours ? ` · ${c.hours}h` : ''}</li>`).join('')
 
 // 사람이 읽는 순서: 정체성 → 전문분야 → 경력 → 시스템 → 강연 → 채널
@@ -110,6 +114,12 @@ const staticHtml = `
       <section>
         <h2>연구 · 학술 활동</h2>
         <ul>${researchList}</ul>
+      </section>
+
+      <section>
+        <h2>자주 묻는 질문 (FAQ)</h2>
+        <p>동의과학대학교 물리치료과 교수·학과장 김강훈에 대해 자주 묻는 질문과 답변입니다.</p>
+        ${faqList}
       </section>
 
       <section>
