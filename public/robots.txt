@@ -55,3 +55,6 @@ User-agent: Applebot-Extended
 Allow: /
 
 Sitemap: https://skyman200.github.io/profcook/sitemap.xml
+
+# LLM 안내 문서 (llms.txt)
+# https://skyman200.github.io/profcook/llms.txt
