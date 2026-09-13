@@ -80,8 +80,8 @@ export const press = [
 export const research = [
   {
     date: '2025.10',
-    kind: '학술대회',
-    title: '대한지역사회물리치료학회 추계학술대회 최우수상 수상',
+    kind: '지도실적',
+    title: '지도학생, 대한지역사회물리치료학회 추계학술대회 학생논문 발표 부문 최우수상 (지도교수)',
     org: '대한지역사회물리치료학회',
     url: 'https://pt.dit.ac.kr/pt/index.php?pCode=MN3000028&mode=view&idx=2032',
   },
