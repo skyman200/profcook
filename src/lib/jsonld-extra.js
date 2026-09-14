@@ -13,7 +13,7 @@ export const paperKorLds = [
   {
     ko: '도수근막이완기법과 폼롤러를 이용한 자가근막이완기법이 만성 긴장성 두통 환자의 통증문턱값 및 신체 도식에 미치는 효과 비교',
     en: 'Comparison of Effect of Manual Myofascial Release and Self Myofascial Release Technique Using a Foam Roller on Pain Thresholds and Body Schema in Subjects with Chronic Tension-type Headache',
-    journal: '한국통합의학회지', year: 2023,
+    journal: '대한통합의학회지', year: 2023,
     url: 'https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART003016767',
   },
   {
@@ -27,6 +27,18 @@ export const paperKorLds = [
     en: 'A Comparison of Lateral Abdominal Muscle Activation during Maximum Expiration in Chronic Low Back Pain Patients and Healthy Asymptomatic Subjects',
     journal: 'PNF and Movement', year: 2014,
     url: 'https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART002262306',
+  },
+  {
+    ko: '필라테스 호흡을 통한 다이아몬드 프레스 동작이 위팔과 배 근육 활성도에 미치는 즉각적인 효과',
+    en: 'The Immediate Effects of Diamond Press Movements through Pilates Breathing on Upper Limb and Abdominal Muscle Activation',
+    journal: 'PNF and Movement', year: 2024,
+    url: 'https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART003148160',
+  },
+  {
+    ko: '물리치료원 독립개원의 필요성',
+    en: 'The Necessity of Independent Clinic Open by Physical Therapist in South Korea',
+    journal: '대한물리의학회지', year: 2010,
+    url: 'https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART001449051',
   },
 ].map((p) => {
   const o = {

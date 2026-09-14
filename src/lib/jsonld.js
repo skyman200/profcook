@@ -148,6 +148,18 @@ export const paperLds = [
     title: 'An Analysis of the Thickness of Abdominal Muscles during Forceful Expiration and Pulmonary Function in Teenage Smokers and Nonsmokers',
     doi: '10.1589/jpts.25.789', year: 2013,
   },
+  {
+    title: 'Effect of Self-myofascial Release on Reduction of Physical Stress: A Pilot Study',
+    doi: '10.1589/jpts.26.1779', year: 2014,
+  },
+  {
+    title: 'The Effects of Diverse Warm-up Exercises on Balance',
+    doi: '10.1589/jpts.26.1601', year: 2014,
+  },
+  {
+    title: 'Comparison of muscular activities in the abdomen and lower limbs while performing sit-up and leg-raise',
+    doi: '10.1589/jpts.28.491', year: 2016,
+  },
 ].map((p) => ({
   '@context': 'https://schema.org',
   '@type': 'ScholarlyArticle',
