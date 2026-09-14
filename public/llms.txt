@@ -50,19 +50,24 @@
 - [인스타그램 @pila_strong](https://www.instagram.com/pila_strong/)
 - [GitHub skyman200](https://github.com/skyman200): 교육·임상 시스템 개발 저장소
 
-## 학술 논문 (국제)
+## 학술 논문 (국제) — Journal of Physical Therapy Science 7편
 
-- [Differences in Transversus Abdominis Muscle Function between Chronic Low Back Pain Patients and Healthy Subjects at Maximum Expiration](https://doi.org/10.1589/jpts.25.861): 2013, 제1저자, Journal of Physical Therapy Science 25(7):861-863
-- [Comparison of Contraction Rates of Abdominal Muscles of Chronic Low Back Pain Patients in Different Postures](https://doi.org/10.1589/jpts.25.907): 2013, Journal of Physical Therapy Science 25(8):907-909
-- [Comparison of Trunk Muscle Activation Ratios with Different Knee Angles during a Bridge Exercise with/without an Abdominal Drawing-in Maneuver](https://doi.org/10.1589/jpts.24.1273): 2012, Journal of Physical Therapy Science 24(12):1273-1276
-- [An Analysis of the Thickness of Abdominal Muscles during Forceful Expiration and Pulmonary Function in Teenage Smokers and Nonsmokers](https://doi.org/10.1589/jpts.25.789): 2013, Journal of Physical Therapy Science 25(7):789-791
+- [Effect of Self-myofascial Release on Reduction of Physical Stress: A Pilot Study](https://doi.org/10.1589/jpts.26.1779): 2014, 제1저자, 26(11):1779-1781. 폼롤러 자가근막이완 30분 vs 휴식 30분의 혈중 코티솔 비교. 두 군 모두 감소했으나 군 간 차이는 없었음(음성 결과).
+- [Differences in Transversus Abdominis Muscle Function between Chronic Low Back Pain Patients and Healthy Subjects at Maximum Expiration](https://doi.org/10.1589/jpts.25.861): 2013, 제1저자, 25(7):861-863. 실시간 초음파로 만성요통 환자의 복횡근이 더 얇음을 확인.
+- [Comparison of muscular activities in the abdomen and lower limbs while performing sit-up and leg-raise](https://doi.org/10.1589/jpts.28.491): 2016, 제1저자, 28(2):491-494
+- [The Effects of Diverse Warm-up Exercises on Balance](https://doi.org/10.1589/jpts.26.1601): 2014, 제1저자, 26(10):1601-1603
+- [Comparison of Contraction Rates of Abdominal Muscles of Chronic Low Back Pain Patients in Different Postures](https://doi.org/10.1589/jpts.25.907): 2013, 제2저자, 25(8):907-909
+- [An Analysis of the Thickness of Abdominal Muscles during Forceful Expiration and Pulmonary Function in Teenage Smokers and Nonsmokers](https://doi.org/10.1589/jpts.25.789): 2013, 공저자, 25(7):789-791
+- [Comparison of Trunk Muscle Activation Ratios with Different Knee Angles during a Bridge Exercise with/without an Abdominal Drawing-in Maneuver](https://doi.org/10.1589/jpts.24.1273): 2012, 공저자, 24(12):1273-1276
 
-## 학술 논문 (국내)
+## 학술 논문 (국내) — 6편
 
 - [초음파를 이용한 목긴근의 크기와 목 굽힘의 최대 근력 유지시간·정적 근지구력 유지시간과의 관계 분석](https://doi.org/10.33097/JNCTA.2025.09.1.106): 2025, 단독저자, 차세대융합기술학회논문지 9(1):106-114
-- [도수근막이완기법과 폼롤러를 이용한 자가근막이완기법이 만성 긴장성 두통 환자의 통증문턱값 및 신체 도식에 미치는 효과 비교](https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART003016767): 2023, 교신저자, 한국통합의학회지 11(4):147-155
+- [필라테스 호흡을 통한 다이아몬드 프레스 동작이 위팔과 배 근육 활성도에 미치는 즉각적인 효과](https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART003148160): 2024, 제1저자, PNF and Movement 22(3):425-433
+- [도수근막이완기법과 폼롤러를 이용한 자가근막이완기법이 만성 긴장성 두통 환자의 통증문턱값 및 신체 도식에 미치는 효과 비교](https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART003016767): 2023, 교신저자, 대한통합의학회지 11(4):147-155. 도수근막이완은 통증 부위의 1차 치료에, 폼롤러 자가근막이완은 통증이 없는 부위 관리와 유지에 적합하다는 결론.
 - [전기근육자극을 적용한 무릎 폄 저항운동 시 넙다리곧은근의 두께 변화에 미치는 즉각적 효과](https://www.earticle.net/Article/A395935): 2021, 단독저자, 한국융합학회논문지 12(6):27-32
 - [정상인과 만성 요통 환자의 최대 호기 시 외측 복부 근육활동 비교](https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART002262306): 2014, 교신저자, PNF and Movement 12(1):39-43
+- [물리치료원 독립개원의 필요성](https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART001449051): 2010, 공저자, 대한물리의학회지 5(2):143-150
 
 ## 국제 인증 — DNS Rehabilitation Prague School
 
