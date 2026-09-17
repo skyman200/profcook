@@ -153,7 +153,7 @@ Kanghoon Kim, Assistant Professor and Chair of the Department of Physical Therap
 <!-- evidence-notes:start -->
 ## 근거 노트 (Evidence Notes)
 
-김강훈이 최신 논문을 읽고 임상 적용 관점에서 정리한 한국어 요약 13편이다.
+김강훈이 최신 논문을 읽고 임상 적용 관점에서 정리한 한국어 요약 14편이다.
 각 노트는 원문 서지정보(DOI·PMID), 연구 설계, 주요 수치, 한계, 임상 적용을 포함한다.
 전문에 접근하지 못한 논문은 해당 사실을 본문에 명시했다.
 
@@ -171,4 +171,5 @@ Kanghoon Kim, Assistant Professor and Chair of the Department of Physical Therap
 - [근력운동의 최적 용량은 주당 90~119분이다 — 14만 7천 명 30년 추적](https://skyman200.github.io/profcook/evidence/resistance-training-mortality/) — British Journal of Sports Medicine, DOI 10.1136/bjsports-2025-110503
 - [러닝 부상은 주간 거리가 아니라 한 번의 세션에서 결정된다 — 58만 세션 분석](https://skyman200.github.io/profcook/evidence/running-injury-single-session/) — British Journal of Sports Medicine, DOI 10.1136/bjsports-2024-109380
 - [운동 후 회복 영양 전략 — 짧은 회복 구간에서 무엇이 실제로 작동하는가](https://skyman200.github.io/profcook/evidence/post-exercise-recovery-nutrition/) — Sports Medicine, DOI 10.1007/s40279-025-02213-6
+- [근력운동 처방 변수 중 실제로 결과를 바꾼 것 — ACSM 2026 포지션 스탠드](https://skyman200.github.io/profcook/evidence/resistance-training-position-stand/) — Medicine & Science in Sports & Exercise, DOI 10.1249/MSS.0000000000003897
 <!-- evidence-notes:end -->
