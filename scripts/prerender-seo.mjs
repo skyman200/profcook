@@ -23,6 +23,10 @@ const { projects, systems, chapters } = await import(resolve(root, 'src/data/pro
 const { press, research } = await import(resolve(root, 'src/data/press.js'))
 const { papersIntl, papersKor } = await import(resolve(root, 'src/data/papers.js'))
 const { certs, certsMeta } = await import(resolve(root, 'src/data/certs.js'))
+const { notes: evNotes1 } = await import(resolve(root, 'scripts/evidence-data.mjs'))
+const { notes2: evNotes2 } = await import(resolve(root, 'scripts/evidence-data-2.mjs'))
+const { notes3: evNotes3 } = await import(resolve(root, 'scripts/evidence-data-3.mjs'))
+const evidenceNotes = [...evNotes1, ...evNotes2, ...evNotes3].sort((a, b) => (a.date < b.date ? 1 : -1))
 const { faqLd, faqEnLd } = await import(resolve(root, 'src/lib/jsonld.js'))
 
 const esc = (s = '') =>
@@ -117,6 +121,17 @@ const staticHtml = `
       <section>
         <h2>연구 · 학술 활동</h2>
         <ul>${researchList}</ul>
+      </section>
+
+      <section>
+        <h2>근거 노트 (Evidence Notes)</h2>
+        <p>김강훈이 근골격계 물리치료·운동과학 분야의 최신 논문을 임상 적용 관점으로 정리한 한국어 요약 ${evidenceNotes.length}편입니다. 각 노트는 원문 서지정보(DOI·PMID), 연구 설계, 주요 수치, 한계, 임상 적용을 포함합니다. <a href="/profcook/evidence/">전체 목록 보기</a></p>
+        <ul>${evidenceNotes
+          .map(
+            (n) =>
+              `<li>${esc(n.date)} · ${esc(n.journal)} — <a href="/profcook/evidence/${esc(n.slug)}/">${esc(n.title)}</a>. ${esc(String(n.lead).replace(/<[^>]+>/g, ''))} DOI ${esc(n.doi)}</li>`,
+          )
+          .join('')}</ul>
       </section>
 
       <section>

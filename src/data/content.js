@@ -191,6 +191,11 @@ export const contact = {
   affiliationsLabel: { ko: '소속 · 연계', en: 'AFFILIATIONS' },
   affiliations: [
     {
+      name: { ko: '근거 노트 — 최신 논문 정리', en: 'Evidence Notes — paper summaries' },
+      note: { ko: '근골격계 물리치료·운동과학 논문을 임상 적용 관점으로 정리', en: 'Musculoskeletal PT & exercise science, summarised for clinical use' },
+      url: 'https://skyman200.github.io/profcook/evidence/',
+    },
+    {
       name: { ko: '동의과학대학교 물리치료과', en: 'DIT · Dept. of Physical Therapy' },
       note: { ko: '재직 학과 · 교수·학과장', en: 'Home department · Professor & Chair' },
       url: 'https://pt.dit.ac.kr/pt/',
