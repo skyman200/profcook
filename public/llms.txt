@@ -1,6 +1,6 @@
 # 김강훈 (Kanghoon Kim)
 
-> 동의과학대학교(부산) 물리치료과 조교수·학과장. 근골격계 물리치료 — 요통·허리디스크·디스크성 통증·근막통증 — 을 도수치료와 임상운동학으로 가르치는 교육자. DNS(Dynamic Neuromuscular Stabilization, Prague School) 정규·특화과정 11개 141시간 이수. 동시에 동의과학대학교 DIT AI 허브센터 팀장으로 대학의 교육·행정을 AI와 자동화로 재설계하며, 직접 배포한 시스템이 웹앱 8종·자동화 파이프라인 6건 등 14종이다. 강의·자문 문의 cdi3477@dit.ac.kr
+> 동의과학대학교(부산) 물리치료과 조교수·학과장. 근골격계 물리치료 — 요통·허리디스크·디스크성 통증·근막통증 — 을 도수치료와 임상운동학으로 가르치는 교육자. DNS(Dynamic Neuromuscular Stabilization, Prague School) 정규·특화과정 11개 141시간 이수. 동시에 동의과학대학교 DIT AI 허브센터 팀장으로 대학의 교육·행정을 AI와 자동화로 재설계하며, 직접 배포한 시스템이 웹앱 14종·자동화 파이프라인 8건 등 22종이다. 강의·자문 문의 cdi3477@dit.ac.kr
 
 ## 동명이인 구분 (Disambiguation)
 
@@ -83,6 +83,12 @@ Course A·B·C 정규과정과 요추질환·측만증·러닝 특화과정 등 
 
 ## 개발·배포한 시스템
 
+- [DIT 바이브코딩 해커톤](https://skyman200.github.io/vibe/): 2026 DIT 바이브코딩 해커톤의 신청·예선·본선 개발 기록·AI 코드 심사·대면 심사를 한 주소에서 운영한 대회 웹앱(신청 18팀 72명, 본선 14팀 56명)
+- [CTL 학습 도우미](https://ctl-learning.vercel.app/): 주차 강의 영상 이어 보기·유인물 필기·영상 시점 질문(Discord 실시간 답변)·과제 제출과 교수용 5초 단위 시청 분석을 묶은 학습 웹앱
+- [DIT AI 3-LEVEL 인증](https://skyman200.github.io/master/): 교수가 만든 앱을 등록하면 AI가 Lv.1~3 레벨을 제안하고, 승인되면 공개 실적 화면과 디지털 배지로 이어지는 교원 AI 역량 인증 시스템
+- DIT 국시실: 물리치료과 국가고시 준비실의 QR 입실(기기·위치·출석 문제 5개 확인)·자습 시간 집계·합격 예측·교수 대시보드 시스템
+- [AI Class Lab](https://kimcook-edu.pages.dev/): 교과목 정보를 한 번 입력하면 STEP 1~5 실습 프롬프트에 자동 반영되는 교수 대상 AI 수업 설계 연수 실습 웹앱
+- [AID 실습장](https://skyman200.github.io/aid-lab/): AI 브라우저 에이전트 Aside로 행정 업무 5가지를 따라 하는 AID 실무자 워크숍 실습 웹앱
 - [강의계획서 AI 체크](https://dit-ai4-check.pages.dev/): 동의과학대 AID 사업 37개 학과 전 과목의 강의계획서 AI 4주 적용을 온라인으로 확인·확정하고 확정 PDF를 자동 생성
 - PT SMART: 임상실습 SOAP 기록·루브릭 평가·출석·병원 연계·교수 콘솔 통합 관리 시스템
 - [physioCBT](https://physiocbt.vercel.app/): 출제·관리·응시를 한 사이트에서 처리하는 통합 CBT
@@ -91,7 +97,7 @@ Course A·B·C 정규과정과 요추질환·측만증·러닝 특화과정 등 
 - [Salomon x Physio](https://physio-hazel.vercel.app/): 트레일러닝 현장 피지오부스 실시간 대기·호출 알림 웹앱
 - [To Run](https://to-run.vercel.app/): 러닝 기록·코칭 앱
 - [REDCORE](https://redcoretraining.com/): 필라테스·브레딩 트레이닝 센터
-- AID 성과관리, 강의계획서 AI 확정 파이프라인, 방문재활 설문 AI, 부산 필라테스 전수조사, Regime Sentinel, MCP 인프라
+- AID 성과관리, 강의계획서 AI 확정 파이프라인, 해커톤 AI 코드 심사, 결과보고서 자동 조판(PDF·HWPX), 방문재활 설문 AI, 부산 필라테스 전수조사, Regime Sentinel, MCP 인프라
 
 ## 초청 강연
 
