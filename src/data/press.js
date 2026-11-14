@@ -2,7 +2,41 @@
 // 없는 논문/기사는 만들지 않는다. 확인된 것만.
 
 // 언론 보도 (네이버뉴스/언론사 원문 URL 검증됨)
+// 이미지: press1~8 기존, press9=한국대학신문(2026.11.12), press10=베리타스알파(2026.11.12),
+//         press11=부산일보(2026.11.12), press12=아시아경제(2026.11.12), press13=국제신문(2026.07.27)
 export const press = [
+  {
+    date: '2026.11.12',
+    outlet: '부산일보',
+    title: '동의과학대 김강훈 교수, 고등직업교육정책 연수서 ‘AI 실무 활용’ 특강',
+    url: 'https://www.busan.com/view/busan/view.php?code=2026111214141369743',
+    image: 'images/press/press11.jpg',
+    tag: 'AI·교육혁신',
+  },
+  {
+    date: '2026.11.12',
+    outlet: '아시아경제',
+    title: '대학행정 AI 맡길 일은 따로 있다… 동의과학대 김강훈 교수, 실무 적용법 소개',
+    url: 'https://www.asiae.co.kr/article/2026111211170552267',
+    image: 'images/press/press12.jpg',
+    tag: 'AI·교육혁신',
+  },
+  {
+    date: '2026.11.12',
+    outlet: '한국대학신문',
+    title: '동의과학대 김강훈 교수, 고등직업교육정책 연수서 AI 학사행정 혁신 특강 진행',
+    url: 'https://news.unn.net/news/articleView.html?idxno=600475',
+    image: 'images/press/press9.jpg',
+    tag: 'AI·교육혁신',
+  },
+  {
+    date: '2026.11.12',
+    outlet: '베리타스알파',
+    title: '동의과학대 김강훈 교수, 전문대 교무학사관리자 연수서 ‘AI 기반 학사행정 혁신’ 특강',
+    url: 'https://www.veritas-a.com/news/articleView.html?idxno=636677',
+    image: 'images/press/press10.jpg',
+    tag: 'AI·교육혁신',
+  },
   {
     date: '2026.07.27',
     outlet: '아시아경제',
@@ -17,6 +51,14 @@ export const press = [
     title: '동의과학대 김강훈 교수, 전문대학 법인 관계자 대상 AI 활용 특강 성료',
     url: 'https://www.busan.com/view/busan/view.php?code=2026072714261938187',
     image: 'images/press/press2.jpg',
+    tag: 'AI·교육혁신',
+  },
+  {
+    date: '2026.07.27',
+    outlet: '국제신문',
+    title: '동의과학대학교 김강훈 교수, 전국 전문대학 법인 관계자 대상 AI 활용 특강',
+    url: 'https://www.kookje.co.kr/news2011/asp/newsbody.asp?code=0300&key=20260727.99099007900',
+    image: 'images/press/press13.jpg',
     tag: 'AI·교육혁신',
   },
   {
