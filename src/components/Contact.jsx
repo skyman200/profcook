@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import Reveal from './Reveal'
+import Visitors from './Visitors'
 import { useLocale } from '../lib/locale'
 
 export default function Contact({ contact, profile }) {
@@ -46,15 +47,18 @@ export default function Contact({ contact, profile }) {
           </Reveal>
         )}
       </div>
-      <div className="foot">
+      <footer className="foot">
         <div className="wrap foot__row">
           <span className="foot__name">{profile.nameEn}</span>
           <span>© 2026 {profile.name} · {lang === 'ko' ? profile.title : profile.titleEn}</span>
         </div>
+        <div className="wrap foot__views">
+          <Visitors />
+        </div>
         <div className="wrap foot__credit">
           3D Bull: “Big Fat Bull” by <a href="https://sketchfab.com/Nyilonelycompany" target="_blank" rel="noopener noreferrer">Nyilonelycompany</a> · CC BY 4.0
         </div>
-      </div>
+      </footer>
     </section>
   )
 }

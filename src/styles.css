@@ -386,6 +386,14 @@ button { font-family: inherit; }
 .foot__credit { margin-top: 14px; color: var(--faint); font-size: 0.68rem; }
 .foot__credit a { color: var(--faint); text-decoration: underline; }
 
+/* 방문자 집계 — TOTAL / TODAY */
+.foot__views { margin-top: 22px; }
+.views { display: flex; align-items: baseline; flex-wrap: wrap; gap: 8px 26px; font-variant-numeric: tabular-nums; }
+.views[hidden] { display: none; }
+.views__item { display: inline-flex; align-items: baseline; gap: 8px; }
+.views__label { font-size: 0.6rem; letter-spacing: 0.26em; text-transform: uppercase; color: rgba(236, 241, 250, 0.26); }
+.views__num { font-size: 0.84rem; letter-spacing: 0.06em; color: rgba(236, 241, 250, 0.66); font-weight: 600; }
+
 /* ============ MODAL ============ */
 .modal { position: fixed; inset: 0; z-index: 900; display: flex; align-items: center; justify-content: center; padding: clamp(16px, 4vw, 48px); }
 .modal__backdrop { position: absolute; inset: 0; background: rgba(4, 5, 8, 0.85); backdrop-filter: blur(6px); }
