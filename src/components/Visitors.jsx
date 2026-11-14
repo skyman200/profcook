@@ -92,6 +92,8 @@ export default function Visitors() {
   useEffect(() => {
     const el = box.current
     if (!el) return
+    // 관찰 대상은 숨겨지지 않은 푸터 — 숨김(hidden) 상태인 요소는 교차 영역이 0이라 관찰이 시작되지 않는다.
+    const target = el.closest('footer') || el
     if (!('IntersectionObserver' in window)) {
       setInView(true)
       return
@@ -105,7 +107,7 @@ export default function Visitors() {
       },
       { threshold: 0.15 },
     )
-    io.observe(el)
+    io.observe(target)
     return () => io.disconnect()
   }, [])
 
