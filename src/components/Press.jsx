@@ -33,7 +33,7 @@ export default function Press({ press, research, meta }) {
                 </div>
                 <div className="pcard__title">{p.title}</div>
                 {!p.image && <span className="pcard__tag pcard__tag--inline">{p.tag}</span>}
-                <span className="pcard__more">{lang === 'ko' ? '기사 보기' : 'Read'} ↗</span>
+                <span className="pcard__more">{p.cta ? L(p.cta) : lang === 'ko' ? '기사 보기' : 'Read'} ↗</span>
               </div>
             </motion.a>
           ))}

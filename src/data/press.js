@@ -4,7 +4,17 @@
 // 언론 보도 (네이버뉴스/언론사 원문 URL 검증됨)
 // 이미지: press1~8 기존, press9=한국대학신문(2026.11.12), press10=베리타스알파(2026.11.12),
 //         press11=부산일보(2026.11.12), press12=아시아경제(2026.11.12), press13=국제신문(2026.07.27)
+//         press14=부산외국어대학교 연수 현장(2026.11.13, 기사 없음 → LinkedIn 피드로 연결)
 export const press = [
+  {
+    date: '2026.11.13',
+    outlet: '부산외국어대학교 PSC',
+    title: '부산외국어대학교 교수자 AI 활용 맞춤형 연수 — ‘교수자를 위한 AI 활용 수업 설계와 실습’',
+    url: 'https://www.linkedin.com/feed/update/urn:li:activity:7526872076503203840/',
+    image: 'images/press/press14.jpg',
+    tag: 'AI·교육혁신',
+    cta: { ko: '현장 기록 보기', en: 'Field note' },
+  },
   {
     date: '2026.11.12',
     outlet: '부산일보',

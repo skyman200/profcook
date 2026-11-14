@@ -157,6 +157,7 @@ export const lectures = [
   { period: { ko: '2026년 5월', en: 'May 2026' }, date: '2026.05', host: { ko: '한국전문대교육협의회', en: 'Korean Council for University College Education' }, kind: { ko: '초청 강연', en: 'Invited lecture' } },
   { period: { ko: '2026년 7월', en: 'July 2026' }, date: '2026.07', host: { ko: '동의과학대학교 교수학습개발센터', en: 'DIT Center for Teaching & Learning' }, kind: { ko: '초청 강연', en: 'Invited lecture' } },
   { period: { ko: '2026년 7월', en: 'July 2026' }, date: '2026.07', host: { ko: '한국전문대법인협의회', en: 'Korean Assoc. of Private College Foundations' }, kind: { ko: '초청 강연', en: 'Invited lecture' } },
+  { period: { ko: '2026년 11월 13일 · 교수자를 위한 AI 활용 수업 설계와 실습', en: 'Nov 13, 2026 · AI-integrated course design & hands-on for faculty' }, date: '2026.11', host: { ko: '부산외국어대학교 PSC 교수학습기술센터', en: 'BUFS PSC Center for Teaching & Learning Technology' }, kind: { ko: '초청 연수', en: 'Invited workshop' } },
 ]
 export const lecturesTheme = {
   ko: 'AI·자동화 기반 교육 혁신과 디지털 전환',
@@ -246,7 +247,7 @@ export const ledger = {
     { name: 'Olympic Games', sub: { ko: '평창 동계올림픽 의무요원', en: 'PyeongChang Winter Olympics medical staff' }, count: 1, unit: { ko: '대회', en: 'games' } },
     { name: 'Years in Movement', sub: { ko: '임상 · 현장 · 강단', en: 'Clinic · field · classroom' }, count: 20, unit: { ko: '년 +', en: 'yrs +' } },
     { name: 'Systems Shipped', sub: { ko: '웹앱 14종 + 자동화 파이프라인 8건', en: '14 web apps + 8 automation pipelines' }, count: 22, unit: { ko: '종', en: 'systems' } },
-    { name: 'Invited Lectures', sub: { ko: '2026 한 시즌에만', en: 'In a single season, 2026' }, count: 3, unit: { ko: '회', en: 'talks' } },
+    { name: 'Invited Lectures', sub: { ko: '2026 한 시즌에만', en: 'In a single season, 2026' }, count: 4, unit: { ko: '회', en: 'talks' } },
     { name: 'Clinical Films', sub: { ko: '유튜브 피티로그 임상 강의', en: 'PT Log clinical lectures on air' }, count: 5, unit: { ko: '편', en: 'films' } },
     { name: 'Community', sub: { ko: '게시물 812 · 인스타그램 팔로워', en: '812 posts · Instagram followers' }, count: 1215, unit: { ko: '명', en: 'people' } },
   ],
